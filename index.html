@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GATE EE Practice Console</title>
+<style>
+  :root{
+    --bg:#EEF1F5;
+    --surface:#FFFFFF;
+    --ink:#111827;
+    --ink-soft:#4B5563;
+    --primary:#0B3B60;
+    --primary-dark:#082A46;
+    --accent:#D98324;
+    --answered:#1F8A55;
+    --not-answered:#C1443A;
+    --marked:#6D4AA3;
+    --not-visited:#94A0AE;
+    --border:#D8DEE6;
+    --mono: 'Courier New', Consolas, monospace;
+    --sans: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:var(--sans);background:var(--bg);color:var(--ink);}
+  button{font-family:inherit;cursor:pointer;}
+  input,textarea,select{font-family:inherit;}
+
+  /* ---------- Setup Screen ---------- */
+  #setupScreen{
+    max-width:760px;margin:0 auto;padding:48px 24px 80px;
+  }
+  .setup-eyebrow{font-size:13px;color:var(--primary);font-weight:600;letter-spacing:.02em;}
+  .setup-title{font-size:32px;font-weight:700;margin:6px 0 4px;color:var(--primary-dark);}
+  .setup-sub{color:var(--ink-soft);margin-bottom:32px;font-size:15px;line-height:1.5;}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:24px;margin-bottom:20px;}
+  .card h3{margin:0 0 12px;font-size:16px;color:var(--primary-dark);}
+  .field-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .field{flex:1;min-width:180px;margin-bottom:14px;}
+  .field label{display:block;font-size:13px;color:var(--ink-soft);margin-bottom:6px;}
+  .field input[type=text], .field input[type=number]{
+    width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:6px;font-size:14px;
+  }
+  textarea#jsonInput{
+    width:100%;min-height:180px;padding:12px;border:1px solid var(--border);border-radius:6px;
+    font-family:var(--mono);font-size:12.5px;resize:vertical;background:#FBFCFD;
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:6px;border:none;
+    font-size:14px;font-weight:600;
+  }
+  .btn-primary{background:var(--primary);color:#fff;}
+  .btn-primary:hover{background:var(--primary-dark);}
+  .btn-accent{background:var(--accent);color:#fff;}
+  .btn-accent:hover{background:#BC6E17;}
+  .btn-ghost{background:transparent;color:var(--primary);border:1px solid var(--primary);}
+  .btn-ghost:hover{background:#EAF1F7;}
+  .setup-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;}
+  #uploadLabel{display:inline-block;padding:11px 18px;border:1px dashed var(--border);border-radius:6px;color:var(--ink-soft);font-size:14px;}
+  #uploadLabel:hover{border-color:var(--primary);color:var(--primary);}
+  .schema-block{background:#0B3B60;color:#DCE8F2;border-radius:8px;padding:16px;font-family:var(--mono);font-size:12px;line-height:1.6;overflow-x:auto;}
+  .setup-error{color:var(--not-answered);font-size:13px;margin-top:10px;display:none;}
+
+  /* ---------- Library cards ---------- */
+  .set-card{border:1px solid var(--border);border-radius:8px;padding:14px;background:#FBFCFD;cursor:pointer;transition:border-color .12s,transform .12s;}
+  .set-card:hover{border-color:var(--primary);transform:translateY(-1px);}
+  .set-card.disabled{opacity:.5;cursor:not-allowed;}
+  .set-card h4{margin:0 0 6px;font-size:14.5px;color:var(--primary-dark);}
+  .set-card p{margin:0;font-size:12px;color:var(--ink-soft);}
+  .set-card .set-meta{margin-top:8px;font-size:11px;color:var(--ink-soft);}
+
+  /* ---------- Exam Screen ---------- */
+  #examScreen{display:none;height:100vh;flex-direction:column;}
+  .exam-header{
+    background:var(--primary);color:#fff;padding:12px 20px;display:flex;align-items:center;
+    justify-content:space-between;flex-wrap:wrap;gap:10px;
+  }
+  .exam-title{font-size:15px;font-weight:700;}
+  .exam-candidate{font-size:12px;color:#BFD3E3;}
+  .timer-box{
+    background:var(--primary-dark);border-radius:6px;padding:8px 16px;font-family:var(--mono);
+    font-size:20px;letter-spacing:1px;display:flex;align-items:center;gap:8px;
+  }
+  .timer-label{font-size:10px;color:#9FB8CC;font-family:var(--sans);text-transform:uppercase;letter-spacing:.05em;}
+  .header-actions{display:flex;gap:10px;align-items:center;}
+  .header-actions button{padding:9px 14px;border-radius:6px;border:1px solid rgba(255,255,255,.35);
+    background:transparent;color:#fff;font-size:13px;font-weight:600;}
+  .header-actions button:hover{background:rgba(255,255,255,.12);}
+  .header-actions .submit-btn{background:var(--accent);border-color:var(--accent);}
+  .header-actions .submit-btn:hover{background:#BC6E17;}
+
+  .section-tabs{background:var(--primary-dark);display:flex;gap:2px;padding:0 20px;overflow-x:auto;}
+  .section-tab{
+    padding:10px 16px;color:#AFC5D8;font-size:12.5px;font-weight:600;border:none;background:transparent;
+    white-space:nowrap;border-bottom:3px solid transparent;
+  }
+  .section-tab.active{color:#fff;border-bottom-color:var(--accent);}
+
+  .exam-body{flex:1;display:flex;overflow:hidden;}
+  .question-panel{flex:1;padding:28px 32px;overflow-y:auto;background:var(--surface);}
+  .q-meta{display:flex;gap:10px;align-items:center;margin-bottom:16px;flex-wrap:wrap;}
+  .q-num-badge{background:var(--primary);color:#fff;font-family:var(--mono);font-weight:700;
+    padding:4px 10px;border-radius:5px;font-size:13px;}
+  .q-tag{font-size:11.5px;padding:3px 9px;border-radius:20px;border:1px solid var(--border);color:var(--ink-soft);}
+  .q-text{font-size:16px;line-height:1.65;margin-bottom:22px;white-space:pre-wrap;color:var(--ink);}
+  .options{display:flex;flex-direction:column;gap:10px;margin-bottom:20px;}
+  .option-row{
+    display:flex;align-items:flex-start;gap:12px;padding:12px 14px;border:1px solid var(--border);
+    border-radius:8px;cursor:pointer;transition:border-color .12s;
+  }
+  .option-row:hover{border-color:var(--primary);}
+  .option-row.selected{border-color:var(--primary);background:#EAF1F7;}
+  .option-row input{margin-top:3px;}
+  .option-letter{font-family:var(--mono);font-weight:700;color:var(--primary);width:20px;flex-shrink:0;}
+  .nat-input{width:220px;padding:12px 14px;border:1px solid var(--border);border-radius:8px;font-size:15px;font-family:var(--mono);}
+  .nat-hint{font-size:12px;color:var(--ink-soft);margin-top:8px;}
+
+  .nav-bar{
+    display:flex;justify-content:space-between;align-items:center;padding:16px 32px;
+    border-top:1px solid var(--border);background:var(--surface);flex-wrap:wrap;gap:10px;
+  }
+  .nav-left, .nav-right{display:flex;gap:10px;flex-wrap:wrap;}
+  .nav-bar button{padding:10px 16px;border-radius:6px;font-size:13px;font-weight:600;border:1px solid var(--border);background:#fff;}
+  .nav-bar button:hover{border-color:var(--primary);}
+  .nav-bar .mark-btn{color:var(--marked);border-color:var(--marked);}
+  .nav-bar .clear-btn{color:var(--not-answered);border-color:var(--not-answered);}
+  .nav-bar .save-btn{background:var(--primary);color:#fff;border-color:var(--primary);}
+  .nav-bar .prev-btn{color:var(--ink-soft);}
+
+  .palette-panel{
+    width:320px;border-left:1px solid var(--border);background:#F7F9FB;padding:20px;overflow-y:auto;flex-shrink:0;
+  }
+  .palette-summary{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:18px;}
+  .sum-chip{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--ink-soft);}
+  .dot{width:12px;height:12px;border-radius:3px;flex-shrink:0;}
+  .dot.answered{background:var(--answered);}
+  .dot.notanswered{background:var(--not-answered);}
+  .dot.marked{background:var(--marked);}
+  .dot.notvisited{background:var(--not-visited);}
+  .dot.ansmarked{background:var(--answered);box-shadow:0 0 0 2px var(--marked) inset;}
+  .palette-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;}
+  .palette-cell{
+    aspect-ratio:1;border-radius:6px;border:none;color:#fff;font-family:var(--mono);font-weight:700;
+    font-size:12.5px;background:var(--not-visited);position:relative;
+  }
+  .palette-cell.current{outline:2px solid var(--accent);outline-offset:2px;}
+  .palette-cell.answered{background:var(--answered);}
+  .palette-cell.notanswered{background:var(--not-answered);}
+  .palette-cell.marked{background:var(--marked);}
+  .palette-cell.ansmarked{background:var(--answered);box-shadow:0 0 0 3px var(--marked) inset;}
+
+  /* ---------- Calculator (TCS iON exact-layout replica) ---------- */
+  #calcPanel{
+    position:fixed;left:auto;top:0;right:4px;bottom:auto;width:695px;height:488px;
+    background:#d8d8d8;border:0;border-radius:7px;
+    box-shadow:0 2px 7px rgba(0,0,0,.30);display:none;flex-direction:column;
+    z-index:9999;color:#222;overflow:hidden;user-select:none;
+  }
+  #calcHeader{
+    height:62px;flex:0 0 62px;padding:0 14px 0 16px;background:#4286f3;color:#fff;display:flex;
+    justify-content:space-between;align-items:center;cursor:move;font-family:Arial,Helvetica,sans-serif;
+    border-radius:7px 7px 0 0;
+  }
+  #calcHeader span:first-child{display:block;font-size:24px;font-weight:400;line-height:1;}
+  #calcHeader span:last-child{display:flex;align-items:center;gap:0;height:100%;}
+  #calcHeader button{
+    border:0;background:transparent;color:#fff;font-family:Arial,Helvetica,sans-serif;
+    padding:0;border-radius:0;min-width:0;margin:0;cursor:pointer;
+  }
+  #calcHeader button:first-child{
+    width:80px;height:36px;margin-right:31px;background:#57bff4;color:#fff;font-size:17px;font-weight:700;
+  }
+  #calcHeader button:nth-child(2), #calcHeader button:nth-child(3){
+    position:relative;width:28px;height:36px;font-size:0;background:transparent;
+  }
+  #calcHeader button:nth-child(2){margin-right:19px;}
+  #calcHeader button:nth-child(2)::before{
+    content:"";position:absolute;left:1px;top:22px;width:25px;height:3px;background:#fff;border-radius:1px;
+  }
+  #calcHeader button:nth-child(3)::before,
+  #calcHeader button:nth-child(3)::after{
+    content:"";position:absolute;left:13px;top:5px;width:3px;height:27px;background:#fff;border-radius:1px;
+  }
+  #calcHeader button:nth-child(3)::before{transform:rotate(45deg);}
+  #calcHeader button:nth-child(3)::after{transform:rotate(-45deg);}
+  #calcHeader button:hover{filter:brightness(1.05);}
+  #calcFrameWrap{flex:1;padding:23px 16px 24px 16px;background:#d8d8d8;}
+
+  #tcsCalc{
+    width:653px;height:378px;margin:0;background:#d8d8d8;border:0;font-family:Arial,Helvetica,sans-serif;
+  }
+  #tcsCalc .tcs-display-area{padding:0 0 0 0;}
+  #tcsCalc .tcs-sequence,
+  #tcsCalc .tcs-result{
+    width:652px;background:#fff;border:1px solid #d0d0d0;border-radius:1px;
+    box-shadow:inset 0 1px 0 rgba(0,0,0,.03);text-align:right;overflow:hidden;white-space:nowrap;
+  }
+  #tcsCalc .tcs-sequence{height:42px;padding:4px 8px;font:19px/32px Arial,Helvetica,sans-serif;color:#111;}
+  #tcsCalc .tcs-result{height:45px;margin-top:13px;padding:2px 8px;font:29px/37px Arial,Helvetica,sans-serif;color:#111;}
+  #tcsCalc .tcs-top-row{display:flex;align-items:center;height:36px;margin-top:11px;}
+  #tcsCalc .tcs-mode-left{display:flex;align-items:center;gap:8px;height:36px;}
+  #tcsCalc .tcs-mod{
+    width:53px;height:36px;border:1px solid #bdbdbd;border-radius:4px;
+    background:linear-gradient(#f8f8f8,#ededed);color:#222;font:700 18px/34px Arial,sans-serif;
+    padding:0;text-align:center;box-shadow:0 2px 0 #aaa;
+  }
+  #tcsCalc .tcs-angle{display:flex;align-items:center;gap:10px;font-size:14px;color:#222;margin-left:6px;}
+  #tcsCalc .tcs-angle label{display:flex;align-items:center;gap:5px;cursor:pointer;white-space:nowrap;}
+  #tcsCalc .tcs-angle input{appearance:none;width:18px;height:18px;border-radius:50%;border:2px solid #8b8b8b;background:#fff;position:relative;margin:0;}
+  #tcsCalc .tcs-angle input:checked{border-color:#0787ef;}
+  #tcsCalc .tcs-angle input:checked::after{content:"";position:absolute;left:3px;top:3px;width:8px;height:8px;border-radius:50%;background:#0787ef;}
+  #tcsCalc .tcs-memory-row{display:grid;grid-template-columns:repeat(5,53px);gap:7px;margin-left:auto;height:36px;}
+  #tcsCalc .tcs-memory-row button,
+  #tcsCalc .tcs-key{
+    border:1px solid #bdbdbd;border-radius:4px;background:linear-gradient(#f8f8f8,#ededed);
+    color:#222;font-family:Arial,Helvetica,sans-serif;font-weight:700;box-shadow:0 2px 0 #aaa;
+    padding:0;cursor:pointer;
+  }
+  #tcsCalc .tcs-memory-row button{width:53px;height:36px;font-size:18px;}
+  #tcsCalc .tcs-grid{display:grid;grid-template-columns:repeat(11,53px);grid-auto-rows:36px;column-gap:7px;row-gap:9px;padding:15px 0 0;}
+  #tcsCalc .tcs-key{width:53px;height:36px;font-size:18px;line-height:34px;text-align:center;}
+  #tcsCalc .tcs-key.fn{font-size:18px;font-weight:700;}
+  #tcsCalc .tcs-key:hover,#tcsCalc .tcs-memory-row button:hover{background:linear-gradient(#fbfbfb,#efefef);}
+  #tcsCalc .tcs-key:active,#tcsCalc .tcs-memory-row button:active{transform:translateY(1px);box-shadow:0 1px 0 #aaa;}
+  #tcsCalc .tcs-danger{background:#e74c3c !important;color:#fff !important;border-color:#df4436 !important;font-size:25px !important;box-shadow:0 2px 0 #b33529;}
+  #tcsCalc .tcs-equals{background:#2ecc71 !important;color:#fff !important;border-color:#24bb63 !important;font-size:26px !important;box-shadow:0 2px 0 #24a957;}
+  #tcsCalc .tcs-grid .span-2{grid-row:span 2;height:81px;}
+  #tcsCalc .tcs-grid .wide-2{grid-column:span 2;width:113px;}
+  #tcsCalc .tcs-blank{display:none;}
+  #calcFallbackNote{display:none;}
+
+  /* ---------- Result Screen ---------- */
+  #resultScreen{display:none;max-width:900px;margin:0 auto;padding:40px 24px 80px;}
+  .score-hero{background:var(--primary);color:#fff;border-radius:12px;padding:32px;display:flex;
+    justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;margin-bottom:24px;}
+  .score-big{font-size:44px;font-weight:800;font-family:var(--mono);}
+  .score-label{font-size:13px;color:#BFD3E3;margin-top:4px;}
+  .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px;}
+  .stat-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;}
+  .stat-num{font-size:24px;font-weight:800;font-family:var(--mono);}
+  .stat-num.correct{color:var(--answered);}
+  .stat-num.incorrect{color:var(--not-answered);}
+  .stat-num.unattempted{color:var(--not-visited);}
+  .stat-num.neg{color:var(--marked);}
+  .stat-cap{font-size:11.5px;color:var(--ink-soft);margin-top:4px;text-transform:uppercase;letter-spacing:.03em;}
+
+  table.section-table{width:100%;border-collapse:collapse;background:var(--surface);border-radius:10px;overflow:hidden;
+    border:1px solid var(--border);margin-bottom:28px;}
+  table.section-table th, table.section-table td{padding:12px 14px;text-align:left;font-size:13.5px;border-bottom:1px solid var(--border);}
+  table.section-table th{background:#F7F9FB;color:var(--ink-soft);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.03em;}
+  table.section-table tr:last-child td{border-bottom:none;}
+  .bar-track{background:#E7ECF1;border-radius:4px;height:8px;width:120px;overflow:hidden;}
+  .bar-fill{background:var(--primary);height:100%;}
+
+  .review-filters{display:flex;gap:8px;margin-bottom:16px;}
+  .review-filters button{padding:8px 14px;border-radius:20px;border:1px solid var(--border);background:#fff;font-size:12.5px;font-weight:600;}
+  .review-filters button.active{background:var(--primary);color:#fff;border-color:var(--primary);}
+  .review-item{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px 18px;margin-bottom:10px;}
+  .review-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;gap:10px;flex-wrap:wrap;}
+  .review-tag{font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:20px;color:#fff;}
+  .review-tag.correct{background:var(--answered);}
+  .review-tag.incorrect{background:var(--not-answered);}
+  .review-tag.unattempted{background:var(--not-visited);}
+  .review-q{font-size:14px;color:var(--ink);margin-bottom:8px;white-space:pre-wrap;}
+  .review-ans{font-size:12.5px;color:var(--ink-soft);}
+  .review-ans b{color:var(--ink);}
+
+  .restart-row{display:flex;justify-content:center;margin-top:20px;}
+</style>
+</head>
+<body>
+
+<!-- ============= SETUP SCREEN ============= -->
+<div id="setupScreen">
+  <div class="setup-eyebrow">GATE EE PRACTICE CONSOLE</div>
+  <div class="setup-title">Set up your mock test</div>
+  <div class="setup-sub">Load the bundled GATE EE paper or paste your own question bank in JSON. The console handles the timer, on-screen scientific calculator, navigation palette, and scoring — including GATE's negative-marking rules.</div>
+
+  <div class="card">
+    <h3>1. Candidate & duration</h3>
+    <div class="field-row">
+      <div class="field">
+        <label>Candidate name</label>
+        <input type="text" id="candidateName" placeholder="Your name" value="Candidate">
+      </div>
+      <div class="field">
+        <label>Duration (minutes)</label>
+        <input type="number" id="durationMin" value="180" min="5">
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>2. Mock test library</h3>
+    <div class="setup-sub" style="margin-bottom:14px;">Pick any set below to start it immediately with the name/duration above. Sets load from the <code>data/</code> folder next to this file.</div>
+    <div id="libraryStatus" style="font-size:13px;color:var(--ink-soft);">Loading mock test library…</div>
+    <div id="libraryGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;"></div>
+  </div>
+
+  <div class="card">
+    <h3>3. Or load questions manually</h3>
+    <div class="setup-actions" style="margin-bottom:16px;">
+      <button class="btn btn-accent" onclick="loadSampleQuestions()">Load sample GATE EE paper (65 Q)</button>
+      <label id="uploadLabel">Upload JSON file
+        <input type="file" id="fileUpload" accept=".json,application/json" style="display:none" onchange="handleFileUpload(event)">
+      </label>
+    </div>
+    <label style="font-size:13px;color:var(--ink-soft);display:block;margin-bottom:6px;">...or paste JSON directly</label>
+    <textarea id="jsonInput" placeholder="Paste a JSON array of questions here, or pick a set from the library above."></textarea>
+    <div class="setup-error" id="setupError"></div>
+  </div>
+
+  <div class="card">
+    <h3>Question format reference</h3>
+    <div class="schema-block">[
+  {
+    "id": 1,
+    "section": "General Aptitude",
+    "type": "MCQ",              // "MCQ" | "MSQ" | "NAT"
+    "marks": 1,
+    "negative": 0.33,           // fraction deducted if MCQ wrong (ignored for MSQ/NAT)
+    "question": "Question text...",
+    "options": ["Option A text","Option B text","Option C text","Option D text"],
+    "answer": "B"                // MCQ: single letter
+    // MSQ: "answer": ["A","C"]
+    // NAT: "answer": 5.45, "tolerance": 0.05  (omit options for NAT)
+  }
+]</div>
+  </div>
+
+  <div class="setup-actions">
+    <button class="btn btn-primary" onclick="startExam()">Start exam</button>
+  </div>
+</div>
+
+<!-- ============= EXAM SCREEN ============= -->
+<div id="examScreen">
+  <div class="exam-header">
+    <div>
+      <div class="exam-title">GATE EE Practice Console</div>
+      <div class="exam-candidate" id="candidateDisplay"></div>
+    </div>
+    <div class="timer-box">
+      <div>
+        <div class="timer-label">Time Left</div>
+        <div id="timerDisplay">180:00</div>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button onclick="toggleCalc()">🧮 Calculator</button>
+      <button class="submit-btn" onclick="confirmSubmit()">Submit Test</button>
+    </div>
+  </div>
+  <div class="section-tabs" id="sectionTabs"></div>
+  <div class="exam-body">
+    <div class="question-panel" id="questionPanel"></div>
+    <div class="palette-panel">
+      <div class="palette-summary" id="paletteSummary"></div>
+      <div class="palette-grid" id="paletteGrid"></div>
+    </div>
+  </div>
+  <div class="nav-bar">
+    <div class="nav-left">
+      <button class="prev-btn" onclick="goPrev()">← Previous</button>
+    </div>
+    <div class="nav-right">
+      <button class="clear-btn" onclick="clearResponse()">Clear Response</button>
+      <button class="mark-btn" onclick="markAndNext()">Mark for Review &amp; Next</button>
+      <button class="save-btn" onclick="saveAndNext()">Save &amp; Next →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============= CALCULATOR (TCS iON visual + functional replica) ============= -->
+<div id="calcPanel">
+  <div id="calcHeader">
+    <span>Scientific Calculator</span>
+    <span>
+      <button onclick="openCalcInNewWindow()" title="Open the official TCS iON calculator">Help</button>
+      <button onclick="toggleCalc()" title="Close calculator">−</button>
+      <button onclick="toggleCalc()" title="Close calculator">×</button>
+    </span>
+  </div>
+  <div id="calcFrameWrap">
+    <div id="tcsCalc" aria-label="TCS iON Scientific Calculator">
+      <div class="tcs-display-area">
+        <div id="calcExpression" class="tcs-sequence">&nbsp;</div>
+        <div id="calcDisplay" class="tcs-result">0</div>
+      </div>
+      <div class="tcs-top-row">
+        <div class="tcs-mode-left">
+          <button class="tcs-mod tcs-key" onclick="calcBinary('mod')">mod</button>
+          <div class="tcs-angle">
+            <label><input id="calcDegRadio" type="radio" name="calcAngle" checked onclick="calcSetAngle('deg')"> Deg</label>
+            <label><input id="calcRadRadio" type="radio" name="calcAngle" onclick="calcSetAngle('rad')"> Rad</label>
+          </div>
+        </div>
+        <div class="tcs-memory-row">
+        <button onclick="calcMemory('MC')">MC</button>
+        <button onclick="calcMemory('MR')">MR</button>
+        <button onclick="calcMemory('MS')">MS</button>
+        <button onclick="calcMemory('M+')">M+</button>
+        <button onclick="calcMemory('M-')">M-</button>
+        </div>
+      </div>
+      <div class="tcs-grid">
+        <button class="tcs-key fn" onclick="calcUnary('sinh')">sinh</button>
+        <button class="tcs-key fn" onclick="calcUnary('cosh')">cosh</button>
+        <button class="tcs-key fn" onclick="calcUnary('tanh')">tanh</button>
+        <button class="tcs-key fn" onclick="calcScientificExp()">Exp</button>
+        <button class="tcs-key" onclick="calcParen('(')">(</button>
+        <button class="tcs-key" onclick="calcParen(')')">)</button>
+        <button class="tcs-key tcs-danger wide-2" onclick="calcBackspace()">←</button>
+        <button class="tcs-key tcs-danger" onclick="calcClear()">C</button>
+        <button class="tcs-key tcs-danger" onclick="calcSign()">+/-</button>
+        <button class="tcs-key fn" onclick="calcUnary('sqrt')">√</button>
+
+        <button class="tcs-key fn" onclick="calcUnary('asinh')">sinh⁻¹</button>
+        <button class="tcs-key fn" onclick="calcUnary('acosh')">cosh⁻¹</button>
+        <button class="tcs-key fn" onclick="calcUnary('atanh')">tanh⁻¹</button>
+        <button class="tcs-key fn" onclick="calcUnary('log2')">log₂x</button>
+        <button class="tcs-key fn" onclick="calcUnary('ln')">ln</button>
+        <button class="tcs-key fn" onclick="calcUnary('log')">log</button>
+        <button class="tcs-key" onclick="calcDigit('7')">7</button>
+        <button class="tcs-key" onclick="calcDigit('8')">8</button>
+        <button class="tcs-key" onclick="calcDigit('9')">9</button>
+        <button class="tcs-key" onclick="calcBinary('/')">/</button>
+        <button class="tcs-key" onclick="calcUnary('percent')">%</button>
+
+        <button class="tcs-key fn" onclick="calcConstant('pi')">π</button>
+        <button class="tcs-key fn" onclick="calcConstant('e')">e</button>
+        <button class="tcs-key fn" onclick="calcUnary('fact')">n!</button>
+        <button class="tcs-key fn" onclick="calcPending('logbase')">logᵧx</button>
+        <button class="tcs-key fn" onclick="calcUnary('expn')">eˣ</button>
+        <button class="tcs-key fn" onclick="calcUnary('pow10')">10ˣ</button>
+        <button class="tcs-key" onclick="calcDigit('4')">4</button>
+        <button class="tcs-key" onclick="calcDigit('5')">5</button>
+        <button class="tcs-key" onclick="calcDigit('6')">6</button>
+        <button class="tcs-key" onclick="calcBinary('*')">*</button>
+        <button class="tcs-key" onclick="calcUnary('recip')">1/x</button>
+
+        <button class="tcs-key fn" onclick="calcUnary('sin')">sin</button>
+        <button class="tcs-key fn" onclick="calcUnary('cos')">cos</button>
+        <button class="tcs-key fn" onclick="calcUnary('tan')">tan</button>
+        <button class="tcs-key fn" onclick="calcPending('pow')">xʸ</button>
+        <button class="tcs-key fn" onclick="calcUnary('cube')">x³</button>
+        <button class="tcs-key fn" onclick="calcUnary('square')">x²</button>
+        <button class="tcs-key" onclick="calcDigit('1')">1</button>
+        <button class="tcs-key" onclick="calcDigit('2')">2</button>
+        <button class="tcs-key" onclick="calcDigit('3')">3</button>
+        <button class="tcs-key" onclick="calcBinary('-')">-</button>
+        <button class="tcs-key tcs-equals span-2" onclick="calcEquals()">=</button>
+
+        <button class="tcs-key fn" onclick="calcUnary('asin')">sin⁻¹</button>
+        <button class="tcs-key fn" onclick="calcUnary('acos')">cos⁻¹</button>
+        <button class="tcs-key fn" onclick="calcUnary('atan')">tan⁻¹</button>
+        <button class="tcs-key fn" onclick="calcPending('root')">ʸ√x</button>
+        <button class="tcs-key fn" onclick="calcUnary('cbrt')">∛</button>
+        <button class="tcs-key fn" onclick="calcUnary('abs')">|x|</button>
+        <button class="tcs-key wide-2" onclick="calcDigit('0')">0</button>
+        <button class="tcs-key" onclick="calcDigit('.')">.</button>
+        <button class="tcs-key" onclick="calcBinary('+')">+</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============= RESULT SCREEN ============= -->
+<div id="resultScreen">
+  <div class="score-hero">
+    <div>
+      <div class="score-big" id="finalScore">0 / 0</div>
+      <div class="score-label">Total score</div>
+    </div>
+    <div>
+      <div class="score-big" id="finalPercent">0%</div>
+      <div class="score-label">Percentage</div>
+    </div>
+    <div>
+      <div class="score-big" id="timeTaken">00:00</div>
+      <div class="score-label">Time taken</div>
+    </div>
+  </div>
+
+  <div class="stat-grid">
+    <div class="stat-card"><div class="stat-num correct" id="statCorrect">0</div><div class="stat-cap">Correct</div></div>
+    <div class="stat-card"><div class="stat-num incorrect" id="statIncorrect">0</div><div class="stat-cap">Incorrect</div></div>
+    <div class="stat-card"><div class="stat-num unattempted" id="statUnattempted">0</div><div class="stat-cap">Unattempted</div></div>
+    <div class="stat-card"><div class="stat-num neg" id="statNegative">0</div><div class="stat-cap">Marks lost (negative)</div></div>
+  </div>
+
+  <table class="section-table" id="sectionTable">
+    <thead><tr><th>Section</th><th>Score</th><th>Accuracy</th><th></th></tr></thead>
+    <tbody id="sectionTableBody"></tbody>
+  </table>
+
+  <h3 style="color:var(--primary-dark);">Question-by-question review</h3>
+  <div class="review-filters" id="reviewFilters">
+    <button class="active" data-f="all" onclick="setReviewFilter('all')">All</button>
+    <button data-f="correct" onclick="setReviewFilter('correct')">Correct</button>
+    <button data-f="incorrect" onclick="setReviewFilter('incorrect')">Incorrect</button>
+    <button data-f="unattempted" onclick="setReviewFilter('unattempted')">Unattempted</button>
+  </div>
+  <div id="reviewList"></div>
+
+  <div class="restart-row">
+    <button class="btn btn-primary" onclick="restartConsole()">Start a new test</button>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   STATE
+============================================================ */
+let STATE = {
+  questions: [],
+  sections: [],
+  currentIndex: 0,
+  currentSectionFilter: null,
+  answers: {},       // id -> value
+  visited: new Set(),
+  marked: new Set(),
+  durationSec: 0,
+  remainingSec: 0,
+  timerId: null,
+  startedAt: null,
+  candidate: ''
+};
+let REVIEW_FILTER = 'all';
+let RESULTS_CACHE = null;
+
+/* ============================================================
+   SHUFFLE (Fisher–Yates) — used so questions are NOT grouped
+   subject-wise, matching the real exam's mixed ordering
+============================================================ */
+function shuffleArray(arr){
+  const a = [...arr];
+  for(let i = a.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+/* ============================================================
+   MOCK TEST LIBRARY (data/manifest.json + data/<id>.json)
+   Requires being served over http(s):// — see README.
+============================================================ */
+let LIBRARY_SETS = [];
+
+function loadLibrary(){
+  fetch('data/manifest.json')
+    .then(r => {
+      if(!r.ok) throw new Error('manifest not found');
+      return r.json();
+    })
+    .then(sets => {
+      LIBRARY_SETS = sets;
+      renderLibrary();
+    })
+    .catch(() => {
+      document.getElementById('libraryStatus').innerHTML =
+        'Could not load <code>data/manifest.json</code>. Make sure this file is served from its folder ' +
+        '(e.g. run <code>python -m http.server</code> in that folder and open it via http://localhost:8000) ' +
+        'rather than opened directly as a local file. You can still use the sample paper or paste JSON below.';
+    });
+}
+
+function renderLibrary(){
+  const statusEl = document.getElementById('libraryStatus');
+  const grid = document.getElementById('libraryGrid');
+  grid.innerHTML = '';
+  if(!LIBRARY_SETS.length){
+    statusEl.textContent = 'No sets found in data/manifest.json yet.';
+    return;
+  }
+  statusEl.style.display = 'none';
+  LIBRARY_SETS.forEach(set => {
+    const card = document.createElement('div');
+    card.className = 'set-card';
+    card.innerHTML =
+      '<h4>'+escapeHtml(set.title)+'</h4>'+
+      '<p>'+escapeHtml(set.description||'')+'</p>'+
+      '<div class="set-meta">'+(set.questions||'?')+' questions · '+(set.duration||'?')+' min</div>';
+    card.onclick = () => startFromLibrary(set.id, card);
+    grid.appendChild(card);
+  });
+}
+
+function startFromLibrary(id, cardEl){
+  const errEl = document.getElementById('setupError');
+  errEl.style.display = 'none';
+  if(cardEl){ cardEl.classList.add('disabled'); }
+  fetch('data/'+id+'.json')
+    .then(r => {
+      if(!r.ok) throw new Error('set not found');
+      return r.json();
+    })
+    .then(parsed => {
+      if(!Array.isArray(parsed) || parsed.length === 0) throw new Error('empty set');
+      document.getElementById('jsonInput').value = JSON.stringify(parsed);
+      startExam();
+    })
+    .catch(() => {
+      errEl.textContent = 'Could not load that set (data/'+id+'.json). Check the file exists and is valid JSON.';
+      errEl.style.display = 'block';
+      if(cardEl){ cardEl.classList.remove('disabled'); }
+    });
+}
+document.addEventListener('DOMContentLoaded', loadLibrary);
+
+/* ============================================================
+   SAMPLE QUESTION BANK (65 Q — matches the GATE EE mock paper)
+============================================================ */
+function sampleQuestions(){
+return [
+{"id":1,"section":"General Aptitude","type":"MCQ","marks":1,"negative":0.33,"question":"Choose the word most nearly OPPOSITE in meaning to \"PARSIMONIOUS\":","options":["Frugal","Lavish","Cautious","Reserved"],"answer":"B"},
+{"id":2,"section":"General Aptitude","type":"MCQ","marks":1,"negative":0.33,"question":"Select the grammatically correct sentence:","options":["Neither of the boys were present.","Neither of the boys was present.","Neither of the boy were present.","Neither of boys was present."],"answer":"B"},
+{"id":3,"section":"General Aptitude","type":"MCQ","marks":1,"negative":0.33,"question":"If \"CODE\" is written as \"DPEF\" (each letter shifted forward by one), how is \"WORK\" written in the same code?","options":["XPSL","XQSL","XPSK","XQSK"],"answer":"A"},
+{"id":4,"section":"General Aptitude","type":"MCQ","marks":1,"negative":0.33,"question":"Find the next term: 2, 6, 12, 20, 30, ?","options":["40","42","44","36"],"answer":"B"},
+{"id":5,"section":"General Aptitude","type":"MCQ","marks":1,"negative":0.33,"question":"Statement: \"All engineers are punctual. Some punctual people are managers.\"\nConclusion: \"Some engineers are managers.\"\nDoes the conclusion logically follow?","options":["Conclusion follows","Conclusion does not follow","Cannot be determined","Data insufficient"],"answer":"B"},
+{"id":6,"section":"General Aptitude","type":"MCQ","marks":2,"negative":0.67,"question":"A train 150 m long crosses a platform 250 m long in 20 seconds. What is the speed of the train in km/h?","options":["54","60","72","80"],"answer":"C"},
+{"id":7,"section":"General Aptitude","type":"MCQ","marks":2,"negative":0.67,"question":"In a class, the ratio of boys to girls is 3:2. If 8 more girls join, the ratio becomes 3:4. Find the original number of boys.","options":["12","18","24","9"],"answer":"A"},
+{"id":8,"section":"General Aptitude","type":"MCQ","marks":2,"negative":0.67,"question":"A company's expenses: Salaries 40%, Rent 15%, Utilities 10%, Marketing 20%, Miscellaneous 15%, of a total of ₹50 lakh. How much more is spent on Salaries than Marketing?","options":["₹8 lakh","₹10 lakh","₹12 lakh","₹6 lakh"],"answer":"B"},
+{"id":9,"section":"General Aptitude","type":"MCQ","marks":2,"negative":0.67,"question":"X can complete a job in 12 days, Y in 18 days. They work together for 4 days, then X leaves. In how many more days will Y finish the remaining work?","options":["6","7","8","9"],"answer":"C"},
+{"id":10,"section":"General Aptitude","type":"MCQ","marks":2,"negative":0.67,"question":"Five friends P, Q, R, S, T sit in a row. Q is immediately to the right of P. R is at one of the ends. S is between R and T. Which must be true?","options":["P is at an end","T is at an end","Q is at an end","Cannot be determined"],"answer":"D"},
+
+{"id":11,"section":"Engineering Mathematics","type":"MCQ","marks":1,"negative":0.33,"question":"The rank of the matrix\n[1 2 3]\n[2 4 6]\n[1 1 1]\nis:","options":["1","2","3","0"],"answer":"B"},
+{"id":12,"section":"Engineering Mathematics","type":"NAT","marks":1,"question":"The value of lim(x→0) [sin(3x)/x] is ______.","answer":3,"tolerance":0.01},
+{"id":13,"section":"Engineering Mathematics","type":"MCQ","marks":2,"negative":0.67,"question":"Eigenvalues of the matrix\n[4 1]\n[2 3]\nare:","options":["2, 5","1, 6","3, 4","2, 3"],"answer":"A"},
+{"id":14,"section":"Engineering Mathematics","type":"NAT","marks":2,"question":"Solve dy/dx + y = 1 with y(0) = 0. Find y(1), rounded to 2 decimals.","answer":0.63,"tolerance":0.02},
+{"id":15,"section":"Engineering Mathematics","type":"MCQ","marks":1,"negative":0.33,"question":"For a continuous random variable with PDF f(x) = 2x for 0 ≤ x ≤ 1, the mean is:","options":["1/3","1/2","2/3","1"],"answer":"C"},
+{"id":16,"section":"Engineering Mathematics","type":"MCQ","marks":2,"negative":0.67,"question":"The residue of f(z) = e^z / z² at z = 0 is:","options":["0","1","e","2"],"answer":"B"},
+{"id":17,"section":"Engineering Mathematics","type":"MSQ","marks":2,"question":"Which of the following statements about the Laplace Transform are TRUE?","options":["It converts a time-domain differential equation into an algebraic equation","The Laplace Transform of a unit step function is 1/s","The final value theorem applies only if all poles of sF(s) lie in the left half-plane (or a simple pole at the origin)","The Laplace Transform of e^(at)u(t) is 1/(s+a)"],"answer":["A","B","C"]},
+{"id":18,"section":"Engineering Mathematics","type":"NAT","marks":2,"question":"Using Newton-Raphson starting at x0 = 2 for f(x) = x² − 5, one iteration gives x1 = ______ (2 decimals).","answer":2.25,"tolerance":0.01},
+
+{"id":19,"section":"Core Electrical Engineering","type":"MCQ","marks":1,"negative":0.33,"question":"In a series R-L-C circuit at resonance, the impedance is:","options":["Maximum and inductive","Minimum and resistive","Maximum and capacitive","Zero"],"answer":"B"},
+{"id":20,"section":"Core Electrical Engineering","type":"NAT","marks":1,"question":"A 10 Ω, a 20 Ω, and a 30 Ω resistor are connected in parallel. Equivalent resistance (Ω, 2 decimals) = ______.","answer":5.45,"tolerance":0.05},
+{"id":21,"section":"Core Electrical Engineering","type":"NAT","marks":2,"question":"The Thevenin equivalent resistance seen by a load is 8 Ω. For maximum power transfer, the load resistance (in Ω) should be ______.","answer":8,"tolerance":0.01},
+{"id":22,"section":"Core Electrical Engineering","type":"NAT","marks":1,"question":"For a two-port network, h21 = 50 (short-circuit forward current gain, dimensionless). State the value of h21 = ______.","answer":50,"tolerance":0.5},
+{"id":23,"section":"Core Electrical Engineering","type":"MCQ","marks":1,"negative":0.33,"question":"The Q-factor of a series RLC circuit is given by:","options":["R√(L/C)","(1/R)√(L/C)","1/(R√(LC))","R²LC"],"answer":"B"},
+{"id":24,"section":"Core Electrical Engineering","type":"MCQ","marks":1,"negative":0.33,"question":"The divergence of a magnetic flux density B is:","options":["Equal to charge density","Always zero","Equal to current density","Undefined"],"answer":"B"},
+{"id":25,"section":"Core Electrical Engineering","type":"MCQ","marks":2,"negative":0.67,"question":"Two point charges +Q and −Q are separated by distance d. The electric field at the midpoint on the line joining them is directed:","options":["From +Q to −Q, magnitude zero","From +Q to −Q, nonzero magnitude","From −Q to +Q, nonzero magnitude","Zero"],"answer":"B"},
+{"id":26,"section":"Core Electrical Engineering","type":"NAT","marks":2,"question":"A parallel plate capacitor: plate area 0.02 m², separation 1 mm, dielectric εr = 4 (ε0 = 8.85×10⁻¹² F/m). Capacitance (nF, 2 decimals) = ______.","answer":0.71,"tolerance":0.05},
+{"id":27,"section":"Core Electrical Engineering","type":"MCQ","marks":1,"negative":0.33,"question":"A system is BIBO stable if its impulse response is:","options":["Absolutely integrable","Periodic","Causal only","Always positive"],"answer":"A"},
+{"id":28,"section":"Core Electrical Engineering","type":"MCQ","marks":2,"negative":0.67,"question":"The Fourier Transform of x(t) = δ(t − t0) is:","options":["1","e^(−jωt0)","e^(jωt0)","δ(ω)"],"answer":"B"},
+{"id":29,"section":"Core Electrical Engineering","type":"NAT","marks":2,"question":"For h[n] = (0.5)^n u[n], the DC gain (sum of h[n] over all n) = ______.","answer":2,"tolerance":0.01},
+{"id":30,"section":"Core Electrical Engineering","type":"MCQ","marks":1,"negative":0.33,"question":"Convolution of x(t) with δ(t − 2) gives:","options":["x(t)","x(t−2)","x(t+2)","2x(t)"],"answer":"B"},
+{"id":31,"section":"Core Electrical Engineering","type":"MCQ","marks":1,"negative":0.33,"question":"The number of open-loop poles in the right-half s-plane, via the Routh-Hurwitz criterion, relates directly to the system's:","options":["Gain margin","Absolute stability","Steady-state error","Bandwidth"],"answer":"B"},
+{"id":32,"section":"Core Electrical Engineering","type":"MCQ","marks":2,"negative":0.67,"question":"For a unity feedback system with G(s) = K / [s(s+2)], the value of K for a damping ratio of 0.5 is:","options":["1","2","4","8"],"answer":"C"},
+{"id":33,"section":"Core Electrical Engineering","type":"NAT","marks":2,"question":"A second-order system has ωn = 10 rad/s and ζ = 0.6. The peak overshoot (%) is approximately ______ (nearest integer).","answer":9,"tolerance":1.5},
+{"id":34,"section":"Core Electrical Engineering","type":"MSQ","marks":2,"question":"Which of the following INCREASE the steady-state error of a unity feedback control system?","options":["Decreasing the loop gain K","Adding an integrator to the forward path","Increasing the system type by one","Using a Type-0 system for a ramp input"],"answer":["A","D"]},
+{"id":35,"section":"Core Electrical Engineering","type":"MCQ","marks":1,"negative":0.33,"question":"In a Bode plot, a pole at the origin contributes a slope of:","options":["+20 dB/decade","−20 dB/decade","−40 dB/decade","0 dB/decade"],"answer":"B"},
+{"id":36,"section":"Core Electrical Engineering","type":"MCQ","marks":1,"negative":0.33,"question":"The synchronous speed of a 4-pole, 50 Hz induction motor is:","options":["1000 rpm","1500 rpm","3000 rpm","750 rpm"],"answer":"B"},
+{"id":37,"section":"Core Electrical Engineering","type":"NAT","marks":2,"question":"A 3-phase induction motor runs at 1440 rpm on a 50 Hz, 4-pole supply. Slip (%, 2 decimals) = ______.","answer":4,"tolerance":0.1},
+{"id":38,"section":"Core Electrical Engineering","type":"MCQ","marks":2,"negative":0.67,"question":"In a DC shunt motor, if the field circuit resistance is increased, the speed:","options":["Decreases","Increases","Remains constant","Becomes zero"],"answer":"B"},
+{"id":39,"section":"Core Electrical Engineering","type":"NAT","marks":2,"question":"A single-phase transformer has 400 primary turns and 100 secondary turns; primary voltage 230 V. Secondary voltage (V) = ______.","answer":57.5,"tolerance":0.5},
+{"id":40,"section":"Core Electrical Engineering","type":"MCQ","marks":1,"negative":0.33,"question":"The purpose of a starter in a DC motor is to:","options":["Increase starting torque","Limit starting current","Reverse rotation","Improve efficiency"],"answer":"B"},
+{"id":41,"section":"Core Electrical Engineering","type":"MCQ","marks":2,"negative":0.67,"question":"For a synchronous generator, E = 4.44 f φ N Kw. Doubling frequency (flux, turns constant) causes emf to:","options":["Halve","Double","Remain same","Quadruple"],"answer":"B"},
+{"id":42,"section":"Core Electrical Engineering","type":"MCQ","marks":1,"negative":0.33,"question":"The main advantage of HVDC over HVAC for long-distance bulk power transfer is:","options":["Lower conductor cost","No reactive power compensation needed for the line","Easier voltage transformation","Higher corona loss"],"answer":"B"},
+{"id":43,"section":"Core Electrical Engineering","type":"NAT","marks":2,"question":"A 3-phase line delivers 10 MW at 0.8 lagging pf and 11 kV line voltage. Line current (A, 2 decimals) = ______.","answer":656.08,"tolerance":3},
+{"id":44,"section":"Core Electrical Engineering","type":"MCQ","marks":2,"negative":0.67,"question":"The per-unit impedance of a transformer stays the same when referred from primary to secondary because:","options":["Base values also transform in the same ratio","Impedance is independent of turns ratio","Per-unit values are always 1","None of the above"],"answer":"A"},
+{"id":45,"section":"Core Electrical Engineering","type":"MCQ","marks":1,"negative":0.33,"question":"The Ferranti effect is most prominent in:","options":["Short lines under full load","Long lines under light/no load","Underground cables at full load","Distribution transformers"],"answer":"B"},
+{"id":46,"section":"Core Electrical Engineering","type":"MCQ","marks":1,"negative":0.33,"question":"A generator bus with fixed voltage magnitude and specified real power injection is classified as a:","options":["PV bus","PQ bus","Slack bus","None of these"],"answer":"A"},
+{"id":47,"section":"Core Electrical Engineering","type":"MCQ","marks":2,"negative":0.67,"question":"For a single line-to-ground fault, sequence-network analysis requires connecting:","options":["Positive sequence network only","Positive and negative networks in parallel","Positive, negative, and zero sequence networks in series","Zero sequence network only"],"answer":"C"},
+{"id":48,"section":"Core Electrical Engineering","type":"MCQ","marks":1,"negative":0.33,"question":"A moving-iron instrument can measure:","options":["DC only","AC only","Both AC and DC","Neither"],"answer":"C"},
+{"id":49,"section":"Core Electrical Engineering","type":"NAT","marks":2,"question":"A Wheatstone bridge: P = 100 Ω, Q = 1000 Ω, R = 250 Ω at balance. Unknown resistance S (Ω) = ______. [Balance condition: P/Q = R/S]","answer":2500,"tolerance":10},
+{"id":50,"section":"Core Electrical Engineering","type":"MCQ","marks":1,"negative":0.33,"question":"The error due to the loading effect of a voltmeter is minimized by using a voltmeter with:","options":["Low internal resistance","High internal resistance","Zero resistance","An ammeter instead"],"answer":"B"},
+{"id":51,"section":"Core Electrical Engineering","type":"MCQ","marks":2,"negative":0.67,"question":"On a CRO, a sinusoidal signal shows peak-to-peak vertical deflection of 4 divisions at 2 V/div sensitivity. The RMS value (V) is approximately:","options":["2.83","4.0","5.66","8.0"],"answer":"A"},
+{"id":52,"section":"Core Electrical Engineering","type":"MCQ","marks":1,"negative":0.33,"question":"An ideal op-amp inverting amplifier has Rf = 10 kΩ and Rin = 2 kΩ. Its gain is:","options":["+5","−5","+0.2","−0.2"],"answer":"B"},
+{"id":53,"section":"Core Electrical Engineering","type":"MCQ","marks":1,"negative":0.33,"question":"An SR flip-flop (active high) with S = 1 and R = 1 produces:","options":["Set state","Reset state","No change","An invalid/undefined state"],"answer":"D"},
+{"id":54,"section":"Core Electrical Engineering","type":"NAT","marks":1,"question":"For a 4-bit binary counter, the maximum count value (decimal) before it resets to zero is ______.","answer":15,"tolerance":0},
+{"id":55,"section":"Core Electrical Engineering","type":"MCQ","marks":2,"negative":0.67,"question":"In a common-emitter BJT amplifier, the phase difference between input and output voltage is:","options":["0°","90°","180°","270°"],"answer":"C"},
+{"id":56,"section":"Core Electrical Engineering","type":"MCQ","marks":1,"negative":0.33,"question":"A Zener diode is normally operated in:","options":["Forward bias, active region","Reverse bias, breakdown region","Zero bias","Forward bias, cutoff region"],"answer":"B"},
+{"id":57,"section":"Core Electrical Engineering","type":"NAT","marks":2,"question":"The decimal equivalent of the binary number 10110101 is ______.","answer":181,"tolerance":0},
+{"id":58,"section":"Core Electrical Engineering","type":"MCQ","marks":1,"negative":0.33,"question":"A thyristor (SCR) can be turned OFF by:","options":["Applying a negative gate pulse","Reducing anode current below the holding current","Increasing anode voltage","Increasing gate current"],"answer":"B"},
+{"id":59,"section":"Core Electrical Engineering","type":"MCQ","marks":2,"negative":0.67,"question":"For a single-phase full-wave controlled rectifier with firing angle α, the average output voltage is proportional to:","options":["cos α","sin α","1 − cos α","tan α"],"answer":"A"},
+{"id":60,"section":"Core Electrical Engineering","type":"NAT","marks":2,"question":"A buck converter has input voltage 24 V and duty cycle 0.4 (ideal, continuous conduction). Output voltage (V) = ______.","answer":9.6,"tolerance":0.1},
+{"id":61,"section":"Core Electrical Engineering","type":"MCQ","marks":1,"negative":0.33,"question":"The commutation technique that uses a portion of the load current to turn off the SCR is called:","options":["Natural commutation","Class A (load) commutation","Complementary commutation","External pulse commutation"],"answer":"B"},
+{"id":62,"section":"Core Electrical Engineering","type":"MSQ","marks":2,"question":"Which of the following are TRUE regarding IGBTs?","options":["They combine the high input impedance of MOSFETs with low conduction loss similar to BJTs","They are voltage-controlled devices","They have a negative temperature coefficient of on-state resistance in all operating regions","They are widely used in medium-to-high power inverter applications"],"answer":["A","B","D"]},
+{"id":63,"section":"Core Electrical Engineering","type":"NAT","marks":2,"question":"A balanced 3-phase star-connected load has each phase impedance 10∠30° Ω, on a 400 V (line) supply. Phase current magnitude (A, 2 decimals) = ______.","answer":23.09,"tolerance":0.2},
+{"id":64,"section":"Core Electrical Engineering","type":"MCQ","marks":2,"negative":0.67,"question":"A step-down chopper feeding a DC motor load is used primarily to control:","options":["Motor field flux only","Motor terminal voltage / speed","Motor frequency","Motor power factor"],"answer":"B"},
+{"id":65,"section":"Core Electrical Engineering","type":"NAT","marks":2,"question":"In a load flow study: total generation 500 MW, total load 480 MW, transmission losses 15 MW. The mismatch (MW) to be balanced by the slack bus = ______.","answer":5,"tolerance":0.1}
+];
+}
+
+function loadSampleQuestions(){
+  document.getElementById('jsonInput').value = JSON.stringify(sampleQuestions(), null, 2);
+}
+function handleFileUpload(evt){
+  const file = evt.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = e => { document.getElementById('jsonInput').value = e.target.result; };
+  reader.readAsText(file);
+}
+
+/* ============================================================
+   START EXAM
+============================================================ */
+function startExam(){
+  const errEl = document.getElementById('setupError');
+  errEl.style.display = 'none';
+  let raw = document.getElementById('jsonInput').value.trim();
+  if(!raw){
+    errEl.textContent = 'Paste question JSON or load the sample paper first.';
+    errEl.style.display = 'block';
+    return;
+  }
+  let parsed;
+  try{
+    parsed = JSON.parse(raw);
+    if(!Array.isArray(parsed) || parsed.length === 0) throw new Error('empty');
+  }catch(e){
+    errEl.textContent = 'That JSON could not be parsed. Check the format reference below and try again.';
+    errEl.style.display = 'block';
+    return;
+  }
+
+  STATE.sections = [...new Set(parsed.map(q => q.section || 'General'))];
+  STATE.questions = shuffleArray(parsed);
+  STATE.currentSectionFilter = STATE.questions[0].section;
+  STATE.currentIndex = 0;
+  STATE.answers = {};
+  STATE.visited = new Set();
+  STATE.marked = new Set();
+  STATE.candidate = document.getElementById('candidateName').value || 'Candidate';
+  const durMin = parseFloat(document.getElementById('durationMin').value) || 180;
+  STATE.durationSec = Math.round(durMin * 60);
+  STATE.remainingSec = STATE.durationSec;
+  STATE.startedAt = Date.now();
+
+  document.getElementById('setupScreen').style.display = 'none';
+  document.getElementById('examScreen').style.display = 'flex';
+  document.getElementById('candidateDisplay').textContent = STATE.candidate + ' · ' + STATE.questions.length + ' questions';
+
+  renderSectionTabs();
+  renderQuestion(0);
+  renderPalette();
+  startTimer();
+}
+
+/* ============================================================
+   TIMER
+============================================================ */
+function startTimer(){
+  clearInterval(STATE.timerId);
+  updateTimerDisplay();
+  STATE.timerId = setInterval(() => {
+    STATE.remainingSec--;
+    if(STATE.remainingSec <= 0){
+      STATE.remainingSec = 0;
+      updateTimerDisplay();
+      clearInterval(STATE.timerId);
+      alert('Time is up! Submitting your test.');
+      submitTest();
+      return;
+    }
+    updateTimerDisplay();
+  }, 1000);
+}
+function updateTimerDisplay(){
+  const m = Math.floor(STATE.remainingSec/60);
+  const s = STATE.remainingSec%60;
+  document.getElementById('timerDisplay').textContent =
+    String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+}
+
+/* ============================================================
+   SECTION TABS
+============================================================ */
+function renderSectionTabs(){
+  const el = document.getElementById('sectionTabs');
+  el.innerHTML = '';
+  STATE.sections.forEach(sec => {
+    const btn = document.createElement('button');
+    btn.className = 'section-tab' + (sec === STATE.currentSectionFilter ? ' active' : '');
+    const count = STATE.questions.filter(q => q.section === sec).length;
+    btn.textContent = sec + ' (' + count + ')';
+    btn.onclick = () => {
+      STATE.currentSectionFilter = sec;
+      const firstIdx = STATE.questions.findIndex(q => q.section === sec);
+      renderQuestion(firstIdx);
+      renderSectionTabs();
+      renderPalette();
+    };
+    el.appendChild(btn);
+  });
+}
+
+/* ============================================================
+   RENDER QUESTION
+============================================================ */
+function renderQuestion(index){
+  STATE.currentIndex = index;
+  const q = STATE.questions[index];
+  STATE.currentSectionFilter = q.section;
+  STATE.visited.add(q.id);
+
+  const panel = document.getElementById('questionPanel');
+  let html = '';
+  html += '<div class="q-meta">';
+  html += '<span class="q-num-badge">Q'+(index+1)+'</span>';
+  html += '<span class="q-tag">'+q.section+'</span>';
+  html += '<span class="q-tag">'+q.type+'</span>';
+  html += '<span class="q-tag">+'+q.marks+' mark'+(q.marks>1?'s':'')+(q.type==='MCQ' ? ' · −'+q.negative+' if wrong' : '')+'</span>';
+  html += '</div>';
+  html += '<div class="q-text">'+escapeHtml(q.question)+'</div>';
+
+  if(q.type === 'MCQ'){
+    html += '<div class="options">';
+    const letters = ['A','B','C','D','E','F'];
+    q.options.forEach((opt,i) => {
+      const letter = letters[i];
+      const selected = STATE.answers[q.id] === letter;
+      html += '<label class="option-row'+(selected?' selected':'')+'" onclick="selectMCQ('+q.id+',\''+letter+'\')">';
+      html += '<span class="option-letter">'+letter+'</span>';
+      html += '<span>'+escapeHtml(opt)+'</span>';
+      html += '</label>';
+    });
+    html += '</div>';
+  } else if(q.type === 'MSQ'){
+    html += '<div class="options">';
+    const letters = ['A','B','C','D','E','F'];
+    const current = STATE.answers[q.id] || [];
+    q.options.forEach((opt,i) => {
+      const letter = letters[i];
+      const selected = current.includes(letter);
+      html += '<label class="option-row'+(selected?' selected':'')+'" onclick="toggleMSQ('+q.id+',\''+letter+'\')">';
+      html += '<span class="option-letter">'+letter+'</span>';
+      html += '<span>'+escapeHtml(opt)+'</span>';
+      html += '</label>';
+    });
+    html += '</div>';
+  } else if(q.type === 'NAT'){
+    const val = STATE.answers[q.id] !== undefined ? STATE.answers[q.id] : '';
+    html += '<input type="number" step="any" class="nat-input" id="natInput" value="'+val+'" placeholder="Enter numeric answer" oninput="setNAT('+q.id+', this.value)">';
+    html += '<div class="nat-hint">Numerical answer type — enter your best numeric value. No negative marking.</div>';
+  }
+
+  panel.innerHTML = html;
+  renderPalette();
+}
+
+function escapeHtml(str){
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+function selectMCQ(id, letter){
+  STATE.answers[id] = letter;
+  renderQuestion(STATE.currentIndex);
+}
+function toggleMSQ(id, letter){
+  let cur = STATE.answers[id] || [];
+  if(cur.includes(letter)) cur = cur.filter(l => l !== letter);
+  else cur = [...cur, letter];
+  if(cur.length === 0) delete STATE.answers[id];
+  else STATE.answers[id] = cur;
+  renderQuestion(STATE.currentIndex);
+}
+function setNAT(id, value){
+  if(value === '') delete STATE.answers[id];
+  else STATE.answers[id] = parseFloat(value);
+  renderPalette();
+}
+
+/* ============================================================
+   NAVIGATION
+============================================================ */
+function saveAndNext(){
+  goToRelative(1);
+}
+function markAndNext(){
+  const q = STATE.questions[STATE.currentIndex];
+  STATE.marked.add(q.id);
+  goToRelative(1);
+}
+function clearResponse(){
+  const q = STATE.questions[STATE.currentIndex];
+  delete STATE.answers[q.id];
+  renderQuestion(STATE.currentIndex);
+}
+function goPrev(){ goToRelative(-1); }
+function goToRelative(delta){
+  let next = STATE.currentIndex + delta;
+  if(next < 0) next = 0;
+  if(next >= STATE.questions.length) next = STATE.questions.length - 1;
+  renderQuestion(next);
+}
+function goTo(index){ renderQuestion(index); }
+
+/* ============================================================
+   PALETTE
+============================================================ */
+function renderPalette(){
+  const sectionQs = STATE.questions
+    .map((q,idx) => ({q, idx}))
+    .filter(o => o.q.section === STATE.currentSectionFilter);
+
+  const summary = document.getElementById('paletteSummary');
+  let answered=0, notAnswered=0, markedCount=0, notVisited=0;
+  STATE.questions.forEach(q => {
+    const hasAns = STATE.answers[q.id] !== undefined &&
+      !(Array.isArray(STATE.answers[q.id]) && STATE.answers[q.id].length===0);
+    const isVisited = STATE.visited.has(q.id);
+    const isMarked = STATE.marked.has(q.id);
+    if(!isVisited) notVisited++;
+    else if(isMarked) markedCount++;
+    else if(hasAns) answered++;
+    else notAnswered++;
+  });
+  summary.innerHTML =
+    '<div class="sum-chip"><span class="dot answered"></span>Answered: '+answered+'</div>'+
+    '<div class="sum-chip"><span class="dot notanswered"></span>Not answered: '+notAnswered+'</div>'+
+    '<div class="sum-chip"><span class="dot marked"></span>Marked: '+markedCount+'</div>'+
+    '<div class="sum-chip"><span class="dot notvisited"></span>Not visited: '+notVisited+'</div>';
+
+  const grid = document.getElementById('paletteGrid');
+  grid.innerHTML = '';
+  sectionQs.forEach(o => {
+    const q = o.q;
+    const hasAns = STATE.answers[q.id] !== undefined &&
+      !(Array.isArray(STATE.answers[q.id]) && STATE.answers[q.id].length===0);
+    const isVisited = STATE.visited.has(q.id);
+    const isMarked = STATE.marked.has(q.id);
+    let cls = 'palette-cell';
+    if(!isVisited) cls += '';
+    else if(isMarked && hasAns) cls += ' ansmarked';
+    else if(isMarked) cls += ' marked';
+    else if(hasAns) cls += ' answered';
+    else cls += ' notanswered';
+    if(o.idx === STATE.currentIndex) cls += ' current';
+    const btn = document.createElement('button');
+    btn.className = cls;
+    btn.textContent = o.idx + 1;
+    btn.onclick = () => goTo(o.idx);
+    grid.appendChild(btn);
+  });
+}
+
+/* ============================================================
+   SUBMIT + SCORING
+============================================================ */
+function confirmSubmit(){
+  let answered=0, notAnswered=0, notVisited=0;
+  STATE.questions.forEach(q => {
+    const hasAns = STATE.answers[q.id] !== undefined &&
+      !(Array.isArray(STATE.answers[q.id]) && STATE.answers[q.id].length===0);
+    if(!STATE.visited.has(q.id)) notVisited++;
+    else if(hasAns) answered++;
+    else notAnswered++;
+  });
+  const msg = 'Answered: '+answered+'\nNot answered: '+notAnswered+'\nNot visited: '+notVisited+
+    '\n\nSubmit the test now? This cannot be undone.';
+  if(confirm(msg)) submitTest();
+}
+
+function submitTest(){
+  clearInterval(STATE.timerId);
+  RESULTS_CACHE = computeResults();
+  renderResults(RESULTS_CACHE);
+  document.getElementById('examScreen').style.display = 'none';
+  document.getElementById('calcPanel').style.display = 'none';
+  document.getElementById('resultScreen').style.display = 'block';
+  window.scrollTo(0,0);
+}
+
+function computeResults(){
+  let totalScore = 0, maxScore = 0, negativeLost = 0;
+  let correct = 0, incorrect = 0, unattempted = 0;
+  const perQuestion = [];
+  const sectionStats = {};
+
+  STATE.questions.forEach(q => {
+    maxScore += q.marks;
+    if(!sectionStats[q.section]) sectionStats[q.section] = {score:0, max:0, correct:0, incorrect:0, unattempted:0, total:0};
+    sectionStats[q.section].max += q.marks;
+    sectionStats[q.section].total += 1;
+
+    const given = STATE.answers[q.id];
+    let status, scoreDelta = 0;
+
+    if(q.type === 'MCQ'){
+      if(given === undefined){ status='unattempted'; }
+      else if(given === q.answer){ status='correct'; scoreDelta = q.marks; }
+      else { status='incorrect'; scoreDelta = -(q.negative||0)*q.marks; }
+    } else if(q.type === 'MSQ'){
+      if(given === undefined || given.length===0){ status='unattempted'; }
+      else {
+        const a = [...given].sort().join(',');
+        const b = [...q.answer].sort().join(',');
+        if(a === b){ status='correct'; scoreDelta = q.marks; }
+        else { status='incorrect'; scoreDelta = 0; }
+      }
+    } else { // NAT
+      if(given === undefined || isNaN(given)){ status='unattempted'; }
+      else {
+        const tol = q.tolerance !== undefined ? q.tolerance : 0.01;
+        if(Math.abs(given - q.answer) <= tol){ status='correct'; scoreDelta = q.marks; }
+        else { status='incorrect'; scoreDelta = 0; }
+      }
+    }
+
+    if(status==='correct') correct++;
+    else if(status==='incorrect') incorrect++;
+    else unattempted++;
+
+    if(scoreDelta < 0) negativeLost += -scoreDelta;
+    totalScore += scoreDelta;
+
+    sectionStats[q.section].score += scoreDelta;
+    sectionStats[q.section][status] += 1;
+
+    perQuestion.push({q, given, status, scoreDelta});
+  });
+
+  const timeTakenSec = STATE.durationSec - STATE.remainingSec;
+
+  return {totalScore, maxScore, negativeLost, correct, incorrect, unattempted,
+    perQuestion, sectionStats, timeTakenSec};
+}
+
+function renderResults(r){
+  document.getElementById('finalScore').textContent = round2(r.totalScore) + ' / ' + r.maxScore;
+  const pct = r.maxScore > 0 ? (r.totalScore / r.maxScore * 100) : 0;
+  document.getElementById('finalPercent').textContent = round2(pct) + '%';
+  const m = Math.floor(r.timeTakenSec/60), s = r.timeTakenSec%60;
+  document.getElementById('timeTaken').textContent = String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+
+  document.getElementById('statCorrect').textContent = r.correct;
+  document.getElementById('statIncorrect').textContent = r.incorrect;
+  document.getElementById('statUnattempted').textContent = r.unattempted;
+  document.getElementById('statNegative').textContent = '-' + round2(r.negativeLost);
+
+  const tbody = document.getElementById('sectionTableBody');
+  tbody.innerHTML = '';
+  Object.keys(r.sectionStats).forEach(sec => {
+    const s = r.sectionStats[sec];
+    const acc = (s.correct + s.incorrect) > 0 ? (s.correct/(s.correct+s.incorrect)*100) : 0;
+    const pctOfMax = s.max > 0 ? Math.max(0, s.score/s.max*100) : 0;
+    const tr = document.createElement('tr');
+    tr.innerHTML = '<td>'+sec+'</td>'+
+      '<td>'+round2(s.score)+' / '+s.max+'</td>'+
+      '<td>'+round2(acc)+'%</td>'+
+      '<td><div class="bar-track"><div class="bar-fill" style="width:'+pctOfMax+'%"></div></div></td>';
+    tbody.appendChild(tr);
+  });
+
+  renderReviewList(r);
+}
+
+function round2(n){ return Math.round(n*100)/100; }
+
+function setReviewFilter(f){
+  REVIEW_FILTER = f;
+  document.querySelectorAll('#reviewFilters button').forEach(b => {
+    b.classList.toggle('active', b.dataset.f === f);
+  });
+  renderReviewList(RESULTS_CACHE);
+}
+
+function renderReviewList(r){
+  const list = document.getElementById('reviewList');
+  list.innerHTML = '';
+  const letters = ['A','B','C','D','E','F'];
+  r.perQuestion
+    .filter(item => REVIEW_FILTER === 'all' || item.status === REVIEW_FILTER)
+    .forEach((item, i) => {
+      const q = item.q;
+      let givenText = '—';
+      let correctText = '';
+      if(q.type === 'MCQ'){
+        givenText = item.given !== undefined ? item.given + ' — ' + q.options[letters.indexOf(item.given)] : 'Not attempted';
+        correctText = q.answer + ' — ' + q.options[letters.indexOf(q.answer)];
+      } else if(q.type === 'MSQ'){
+        givenText = item.given && item.given.length ? item.given.join(', ') : 'Not attempted';
+        correctText = q.answer.join(', ');
+      } else {
+        givenText = item.given !== undefined ? item.given : 'Not attempted';
+        correctText = q.answer + (q.tolerance ? ' (±'+q.tolerance+')' : '');
+      }
+      const div = document.createElement('div');
+      div.className = 'review-item';
+      div.innerHTML =
+        '<div class="review-head">'+
+          '<span class="q-num-badge">Q'+(STATE.questions.indexOf(q)+1)+'</span>'+
+          '<span class="review-tag '+item.status+'">'+item.status.toUpperCase()+' · '+(item.scoreDelta>=0?'+':'')+round2(item.scoreDelta)+'</span>'+
+        '</div>'+
+        '<div class="review-q">'+escapeHtml(q.question)+'</div>'+
+        '<div class="review-ans">Your answer: <b>'+escapeHtml(String(givenText))+'</b> &nbsp;|&nbsp; Correct answer: <b>'+escapeHtml(String(correctText))+'</b></div>';
+      list.appendChild(div);
+    });
+  if(list.innerHTML === '') list.innerHTML = '<div style="color:var(--ink-soft);padding:20px;text-align:center;">No questions in this filter.</div>';
+}
+
+function restartConsole(){
+  document.getElementById('resultScreen').style.display = 'none';
+  document.getElementById('setupScreen').style.display = 'block';
+  document.querySelectorAll('.set-card.disabled').forEach(el => el.classList.remove('disabled'));
+}
+
+/* ============================================================
+   CALCULATOR — TCS iON visual + functional replica
+============================================================ */
+const TCS_CALC_URL = 'https://www.tcsion.com/OnlineAssessment/ScientificCalculator/Calculator.html#nogo';
+let calcDragging = false, calcOffsetX=0, calcOffsetY=0;
+const CALC = {
+  expr:'', current:'', scientificMode:false, justEvaluated:false, pending:null,
+  memory:0, angle:'deg', error:false
+};
+
+function toggleCalc(){
+  const panel=document.getElementById('calcPanel');
+  panel.style.display = panel.style.display==='flex' ? 'none' : 'flex';
+  if(panel.style.display==='flex') calcRender();
+}
+function openCalcInNewWindow(){
+  window.open(TCS_CALC_URL,'tcsCalc','width=700,height=560,resizable=yes,scrollbars=yes');
+}
+function calcSetAngle(mode){
+  CALC.angle=mode==='rad'?'rad':'deg';
+  document.getElementById('calcDegRadio').checked=CALC.angle==='deg';
+  document.getElementById('calcRadRadio').checked=CALC.angle==='rad';
+  calcRender();
+}
+function calcDisplayValue(){
+  if(CALC.error) return 'Error';
+  return CALC.current!=='' ? CALC.current : '0';
+}
+function calcRender(){
+  const display=document.getElementById('calcDisplay');
+  const seq=document.getElementById('calcExpression');
+  let shown=CALC.expr;
+  if(CALC.pending){
+    const p=CALC.pending;
+    shown += (shown?' ':'') + String(p.left) + ' ' + p.opLabel + (CALC.current!==''?' '+CALC.current:'');
+  } else if(CALC.current!=='' && CALC.expr){
+    shown += CALC.current;
+  }
+  seq.textContent=shown || '\u00A0';
+  display.textContent=calcDisplayValue();
+}
+function calcFormat(x){
+  if(!Number.isFinite(x)) throw new Error('Math error');
+  if(Object.is(x,-0)) x=0;
+  const ax=Math.abs(x);
+  if(ax!==0 && (ax>=1e12 || ax<1e-10)){
+    return x.toExponential(10).replace(/0+(?=e)/,'').replace(/e\+?/,'e+');
+  }
+  let s=String(Number(x.toPrecision(14)));
+  if(s.includes('.') && !s.includes('e')) s=s.replace(/0+$/,'').replace(/\.$/,'');
+  return s;
+}
+function calcCurrentNumber(){
+  const n=Number(CALC.current||'0');
+  if(!Number.isFinite(n)) throw new Error('Invalid number');
+  return n;
+}
+function calcToRad(x){return CALC.angle==='deg'?x*Math.PI/180:x;}
+function calcFromRad(x){return CALC.angle==='deg'?x*180/Math.PI:x;}
+function calcSinh(x){return Math.sinh(x);}
+function calcCosh(x){return Math.cosh(x);}
+function calcTanh(x){return Math.tanh(x);}
+function calcFactorial(n){
+  if(!Number.isInteger(n)||n<0||n>170) throw new Error('Domain error');
+  let r=1;for(let i=2;i<=n;i++)r*=i;return r;
+}
+function calcSafeExpression(expr){
+  if(!expr.trim()) return 0;
+  const js=expr.replace(/−/g,'-').replace(/×/g,'*').replace(/÷/g,'/');
+  const v=Function('return ('+js+');')();
+  if(!Number.isFinite(v)) throw new Error('Math error');
+  return v;
+}
+function calcResetEntry(){
+  if(CALC.error||CALC.justEvaluated){CALC.expr='';CALC.current='';CALC.pending=null;CALC.error=false;CALC.justEvaluated=false;}
+}
+function calcDigit(ch){
+  calcResetEntry();
+  if(ch==='.'){
+    if(CALC.scientificMode && CALC.current.includes('.')) return;
+    if(CALC.current.includes('.')) return;
+    if(CALC.current===''||CALC.current==='-0') CALC.current=CALC.current==='-0'?'-0.':'0.';
+    else CALC.current+='.';
+  }else{
+    if(CALC.current==='0') CALC.current='';
+    CALC.current+=ch;
+  }
+  calcRender();
+}
+function calcConstant(which){
+  calcResetEntry();
+  CALC.current=calcFormat(which==='pi'?Math.PI:Math.E);
+  calcRender();
+}
+function calcSign(){
+  if(CALC.error){calcClear();return;}
+  if(CALC.scientificMode && /e$/.test(CALC.current)){
+    CALC.current+='-';CALC.scientificMode=false;calcRender();return;
+  }
+  if(CALC.current==='') CALC.current='-';
+  else if(CALC.current==='-') CALC.current='';
+  else if(CALC.current.startsWith('-')) CALC.current=CALC.current.slice(1);
+  else CALC.current='-'+CALC.current;
+  CALC.justEvaluated=false;calcRender();
+}
+function calcBackspace(){
+  if(CALC.error){calcClear();return;}
+  if(CALC.current!=='') CALC.current=CALC.current.slice(0,-1);
+  else if(CALC.expr!=='') CALC.expr=CALC.expr.slice(0,-1);
+  CALC.scientificMode=false;CALC.justEvaluated=false;calcRender();
+}
+function calcClear(){
+  CALC.expr='';CALC.current='';CALC.scientificMode=false;CALC.justEvaluated=false;CALC.pending=null;CALC.error=false;calcRender();
+}
+function calcCommitCurrent(){
+  if(CALC.current!==''){CALC.expr+=CALC.current;CALC.current='';}
+}
+function calcBinary(op){
+  try{
+    if(op==='mod') op='%';
+    if(CALC.error) calcClear();
+    if(CALC.pending){
+      if(CALC.current==='') return;
+      calcFinishPending();
+    }
+    if(CALC.justEvaluated && CALC.current!==''){
+      CALC.expr=CALC.current; CALC.current=''; CALC.justEvaluated=false;
+    } else {
+      calcCommitCurrent();
+    }
+    if(!CALC.expr) CALC.expr='0';
+    if(/[+\-*/%]$/.test(CALC.expr)) CALC.expr=CALC.expr.slice(0,-1)+op;
+    else CALC.expr+=op;
+    calcRender();
+  }catch(_){calcSetError();}
+}
+function calcParen(ch){
+  try{
+    if(ch==='('){
+      calcResetEntry();
+      if(CALC.current!=='') calcCommitCurrent(),CALC.expr+='*';
+      CALC.expr+='(';
+    }else{
+      calcCommitCurrent();
+      const o=(CALC.expr.match(/\(/g)||[]).length,c=(CALC.expr.match(/\)/g)||[]).length;
+      if(o<=c||/[+\-*/%]$/.test(CALC.expr)) return;
+      CALC.expr+=')';CALC.justEvaluated=false;
+    }
+    calcRender();
+  }catch(_){calcSetError();}
+}
+function calcUnary(op){
+  try{
+    if(CALC.error) calcClear();
+    let x;
+    if(CALC.current!=='') x=calcCurrentNumber();
+    else if(CALC.expr!==''){x=calcSafeExpression(CALC.expr);CALC.expr='';}
+    else x=0;
+    let y;
+    switch(op){
+      case 'sin':y=Math.sin(calcToRad(x));break;case 'cos':y=Math.cos(calcToRad(x));break;case 'tan':y=Math.tan(calcToRad(x));break;
+      case 'asin':y=calcFromRad(Math.asin(x));break;case 'acos':y=calcFromRad(Math.acos(x));break;case 'atan':y=calcFromRad(Math.atan(x));break;
+      case 'sinh':y=calcSinh(x);break;case 'cosh':y=calcCosh(x);break;case 'tanh':y=calcTanh(x);break;
+      case 'asinh':y=Math.asinh(x);break;case 'acosh':if(x<1)throw new Error('Domain error');y=Math.acosh(x);break;case 'atanh':if(Math.abs(x)>=1)throw new Error('Domain error');y=Math.atanh(x);break;
+      case 'sqrt':y=Math.sqrt(x);break;case 'cbrt':y=Math.cbrt(x);break;case 'abs':y=Math.abs(x);break;case 'square':y=x*x;break;case 'cube':y=x*x*x;break;
+      case 'recip':y=1/x;break;case 'percent':y=x/100;break;case 'pow10':y=10**x;break;case 'expn':y=Math.exp(x);break;case 'log2':y=Math.log2(x);break;
+      case 'ln':y=Math.log(x);break;case 'log':y=Math.log10(x);break;case 'fact':y=calcFactorial(x);break;default:return;
+    }
+    CALC.current=calcFormat(y);CALC.justEvaluated=true;CALC.scientificMode=false;calcRender();
+  }catch(_){calcSetError();}
+}
+function calcPending(op){
+  try{
+    if(CALC.error)calcClear();
+    if(CALC.pending)return;
+    let x;
+    if(CALC.current!=='')x=calcCurrentNumber();
+    else if(CALC.expr!==''){x=calcSafeExpression(CALC.expr);CALC.expr='';}
+    else x=0;
+    CALC.pending={op,left:x,opLabel:op==='pow'?'xʸ':op==='root'?'ʸ√x':'logᵧx'};
+    CALC.current='';CALC.justEvaluated=false;calcRender();
+  }catch(_){calcSetError();}
+}
+function calcFinishPending(){
+  const p=CALC.pending,y=calcCurrentNumber();let out;
+  if(p.op==='pow')out=Math.pow(p.left,y);
+  else if(p.op==='root'){
+    if(y===0)throw new Error('Domain error');
+    out=p.left<0&&Number.isInteger(y)&&Math.abs(y)%2===1?-Math.pow(-p.left,1/y):Math.pow(p.left,1/y);
+  }else{
+    if(p.left<=0||y<=0||y===1)throw new Error('Domain error');
+    out=Math.log(p.left)/Math.log(y);
+  }
+  CALC.current=calcFormat(out);CALC.pending=null;CALC.justEvaluated=true;
+}
+function calcEquals(){
+  try{
+    if(CALC.error){calcClear();return;}
+    if(CALC.pending){if(CALC.current==='')return;calcFinishPending();calcRender();return;}
+    calcCommitCurrent();
+    if(!CALC.expr){calcRender();return;}
+    const o=(CALC.expr.match(/\(/g)||[]).length,c=(CALC.expr.match(/\)/g)||[]).length;
+    if(o!==c||/[+\-*/%]$/.test(CALC.expr))throw new Error('Incomplete expression');
+    CALC.current=calcFormat(calcSafeExpression(CALC.expr));CALC.expr='';CALC.justEvaluated=true;CALC.scientificMode=false;calcRender();
+  }catch(_){calcSetError();}
+}
+function calcScientificExp(){
+  try{
+    calcResetEntry();
+    if(!CALC.current) return;
+    if(/[eE][+-]?\d*$/.test(CALC.current)) return;
+    CALC.current+='e';CALC.scientificMode=true;CALC.justEvaluated=false;calcRender();
+  }catch(_){calcSetError();}
+}
+function calcMemory(action){
+  try{
+    let v;
+    if(action==='MC')CALC.memory=0;
+    else if(action==='MR'){CALC.current=calcFormat(CALC.memory);CALC.justEvaluated=false;}
+    else{
+      v=CALC.current!==''&&CALC.current!=='-' ? Number(CALC.current) : calcSafeExpression(CALC.expr||'0');
+      if(!Number.isFinite(v))throw new Error('Math error');
+      if(action==='MS')CALC.memory=v;else if(action==='M+')CALC.memory+=v;else if(action==='M-')CALC.memory-=v;
+    }
+    calcRender();
+  }catch(_){calcSetError();}
+}
+function calcSetError(){CALC.expr='';CALC.current='';CALC.pending=null;CALC.error=true;CALC.justEvaluated=false;CALC.scientificMode=false;calcRender();}
+
+// draggable calculator
+document.getElementById('calcHeader').addEventListener('mousedown', function(e){
+  if(e.target && e.target.tagName==='BUTTON') return;
+  calcDragging = true;
+  const panel = document.getElementById('calcPanel');
+  const rect = panel.getBoundingClientRect();
+  calcOffsetX = e.clientX - rect.left;
+  calcOffsetY = e.clientY - rect.top;
+});
+document.addEventListener('mousemove', function(e){
+  if(!calcDragging) return;
+  const panel = document.getElementById('calcPanel');
+  panel.style.left = (e.clientX - calcOffsetX) + 'px';
+  panel.style.top = (e.clientY - calcOffsetY) + 'px';
+  panel.style.right = 'auto';
+  panel.style.bottom = 'auto';
+  panel.style.position = 'fixed';
+});
+document.addEventListener('mouseup', function(){ calcDragging = false; });
+calcRender();
+</script>
+</body>
+</html>
