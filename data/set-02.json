@@ -1,0 +1,913 @@
+[
+    {
+        "id": 1,
+        "section": "General Aptitude",
+        "type": "MCQ",
+        "marks": 1,
+        "negative": 0.33,
+        "question": "Choose the grammatically correct sentence:",
+        "options": [
+            "Inspite of facing severe hardships, he never lost sight of his goal.",
+            "Despite of facing severe hardships, he never lost sight of his goal.",
+            "Inspite facing severe hardships, he never lost sight of his goal.",
+            "Despite facing severe hardship, he never lost sight of his goal."
+        ],
+        "answer": "D"
+    },
+    {
+        "id": 2,
+        "section": "General Aptitude",
+        "type": "MCQ",
+        "marks": 1,
+        "negative": 0.33,
+        "question": "Find the missing number in the series: 3, 7, 15, 31, 63, ?",
+        "options": [
+            "125",
+            "127",
+            "129",
+            "131"
+        ],
+        "answer": "B"
+    },
+    {
+        "id": 3,
+        "section": "General Aptitude",
+        "type": "MCQ",
+        "marks": 1,
+        "negative": 0.33,
+        "question": "If 'PALE' is coded as '2134' and 'EARTH' is coded as '34567', how is 'PEARL' coded?",
+        "options": [
+            "23451",
+            "21345",
+            "24351",
+            "23415"
+        ],
+        "answer": "A"
+    },
+    {
+        "id": 4,
+        "section": "General Aptitude",
+        "type": "MCQ",
+        "marks": 1,
+        "negative": 0.33,
+        "question": "The price of a jacket is increased by 20% and then decreased by 20%. What is the net percentage change in the price of the jacket?",
+        "options": [
+            "0%",
+            "4% increase",
+            "4% decrease",
+            "2% decrease"
+        ],
+        "answer": "C"
+    },
+    {
+        "id": 5,
+        "section": "General Aptitude",
+        "type": "MCQ",
+        "marks": 1,
+        "negative": 0.33,
+        "question": "Select the pair that best expresses a relationship similar to that expressed in the original pair: 'Omnivorous : Animals'",
+        "options": [
+            "Herbivorous : Plants",
+            "Omnipresent : Everywhere",
+            "Carnivorous : Grass",
+            "Granivorous : Birds"
+        ],
+        "answer": "B"
+    },
+    {
+        "id": 6,
+        "section": "General Aptitude",
+        "type": "MCQ",
+        "marks": 2,
+        "negative": 0.66,
+        "question": "A box contains 3 red balls, 4 green balls, and 5 blue balls. Two balls are drawn at random without replacement. What is the probability that both balls are of different colors?",
+        "options": [
+            "47/66",
+            "19/22",
+            "31/44",
+            "23/33"
+        ],
+        "answer": "A"
+    },
+    {
+        "id": 7,
+        "section": "General Aptitude",
+        "type": "NAT",
+        "marks": 2,
+        "negative": 0,
+        "question": "A person travels half of his journey at 40 km/h and the remaining half at 60 km/h. Find the average speed of the entire journey in km/h.",
+        "answer": 48.0,
+        "tolerance": 0.1
+    },
+    {
+        "id": 8,
+        "section": "General Aptitude",
+        "type": "MSQ",
+        "marks": 2,
+        "negative": 0,
+        "question": "Which of the following numbers are divisible by 11?",
+        "options": [
+            "1331",
+            "121",
+            "1089",
+            "987654"
+        ],
+        "answer": [
+            "A",
+            "B"
+        ]
+    },
+    {
+        "id": 9,
+        "section": "General Aptitude",
+        "type": "MCQ",
+        "marks": 2,
+        "negative": 0.66,
+        "question": "If log\u2081\u2080(x) + log\u2081\u2080(x+3) = 1, then the value of x is:",
+        "options": [
+            "2",
+            "5",
+            "-5",
+            "2 and -5"
+        ],
+        "answer": "A"
+    },
+    {
+        "id": 10,
+        "section": "General Aptitude",
+        "type": "NAT",
+        "marks": 2,
+        "negative": 0,
+        "question": "If 6 men or 10 women can complete a piece of work in 15 days, in how many days can 9 men and 15 women complete the same work?",
+        "answer": 5.0,
+        "tolerance": 0.0
+    },
+    {
+        "id": 11,
+        "section": "Engineering Mathematics",
+        "type": "NAT",
+        "marks": 1,
+        "negative": 0,
+        "question": "Find the sum of the eigenvalues of the matrix A = [[2, 1, 5], [0, 3, 7], [0, 0, -1]].",
+        "answer": 4.0,
+        "tolerance": 0.0
+    },
+    {
+        "id": 12,
+        "section": "Engineering Mathematics",
+        "type": "MCQ",
+        "marks": 1,
+        "negative": 0.33,
+        "question": "The value of the line integral \u222e_C (xy dy - yx dx) along the circle x\u00b2 + y\u00b2 = a\u00b2 is:",
+        "options": [
+            "0",
+            "\u03c0a\u00b2",
+            "2\u03c0a\u00b2",
+            "4\u03c0a\u00b2"
+        ],
+        "answer": "C"
+    },
+    {
+        "id": 13,
+        "section": "Engineering Mathematics",
+        "type": "MCQ",
+        "marks": 1,
+        "negative": 0.33,
+        "question": "The rank of the matrix [[1, 2, 3], [2, 4, 6], [3, 6, 9]] is:",
+        "options": [
+            "3",
+            "2",
+            "1",
+            "0"
+        ],
+        "answer": "C"
+    },
+    {
+        "id": 14,
+        "section": "Engineering Mathematics",
+        "type": "NAT",
+        "marks": 1,
+        "negative": 0,
+        "question": "Evaluate lim (x \u2192 0) [sin(3x) / x].",
+        "answer": 3.0,
+        "tolerance": 0.0
+    },
+    {
+        "id": 15,
+        "section": "Engineering Mathematics",
+        "type": "MCQ",
+        "marks": 1,
+        "negative": 0.33,
+        "question": "For a random variable X following a normal distribution with mean 0 and variance 1, P(X > 0) is:",
+        "options": [
+            "0",
+            "0.5",
+            "1",
+            "inf"
+        ],
+        "answer": "B"
+    },
+    {
+        "id": 16,
+        "section": "Engineering Mathematics",
+        "type": "MSQ",
+        "marks": 2,
+        "negative": 0,
+        "question": "Let f(z) = u(x,y) + iv(x,y) be an analytic function. Which of the following statements are always true?",
+        "options": [
+            "u and v satisfy the Cauchy-Riemann equations.",
+            "Both u and v are harmonic functions in the domain.",
+            "The curves u(x,y) = c1 and v(x,y) = c2 intersect orthogonally.",
+            "f'(z) = (\u2202v/\u2202y) - i(\u2202u/\u2202y)"
+        ],
+        "answer": [
+            "A",
+            "B",
+            "C"
+        ]
+    },
+    {
+        "id": 17,
+        "section": "Engineering Mathematics",
+        "type": "NAT",
+        "marks": 2,
+        "negative": 0,
+        "question": "Using Trapezoidal rule with n=4 intervals, evaluate \u222b_0^1 (1 / (1 + x)) dx accurate to two decimal places.",
+        "answer": 0.7,
+        "tolerance": 0.02
+    },
+    {
+        "id": 18,
+        "section": "Engineering Mathematics",
+        "type": "MCQ",
+        "marks": 2,
+        "negative": 0.66,
+        "question": "The general solution of the differential equation d\u00b2y/dx\u00b2 - 4dy/dx + 4y = 0 is:",
+        "options": [
+            "y = (C\u2081 + C\u2082x)e^(2x)",
+            "y = C\u2081e^(2x) + C\u2082e^(-2x)",
+            "y = e^(2x)(C\u2081 cos 2x + C\u2082 sin 2x)",
+            "y = C\u2081e^(x) + C\u2082e^(2x)"
+        ],
+        "answer": "A"
+    },
+    {
+        "id": 19,
+        "section": "Engineering Mathematics",
+        "type": "MCQ",
+        "marks": 2,
+        "negative": 0.66,
+        "question": "If a card is drawn from a standard deck of 52 cards, what is the probability that it is either a king or a heart?",
+        "options": [
+            "4/13",
+            "16/52",
+            "17/52",
+            "4/52"
+        ],
+        "answer": "C"
+    },
+    {
+        "id": 20,
+        "section": "Engineering Mathematics",
+        "type": "NAT",
+        "marks": 2,
+        "negative": 0,
+        "question": "Find the residue of f(z) = 1 / (z(z-2)) at the pole z = 2.",
+        "answer": 0.5,
+        "tolerance": 0.01
+    },
+    {
+        "id": 21,
+        "section": "Engineering Mathematics",
+        "type": "MSQ",
+        "marks": 2,
+        "negative": 0,
+        "question": "Which of the following vector fields are conservative (irrotational)?",
+        "options": [
+            "F = yz i + xz j + xy k",
+            "F = 2xy i + x\u00b2 j + 3z\u00b2 k",
+            "F = y i + x j",
+            "F = x i - y j"
+        ],
+        "answer": [
+            "A",
+            "C",
+            "D"
+        ]
+    },
+    {
+        "id": 22,
+        "section": "Engineering Mathematics",
+        "type": "NAT",
+        "marks": 2,
+        "negative": 0,
+        "question": "Find the value of the determinant of the matrix [[1, 2, 3], [0, 4, 5], [0, 0, 6]].",
+        "answer": 24.0,
+        "tolerance": 0.0
+    },
+    {
+        "id": 23,
+        "section": "Engineering Mathematics",
+        "type": "MCQ",
+        "marks": 2,
+        "negative": 0.66,
+        "question": "The Laplace transform of t * e^(-2t) is:",
+        "options": [
+            "1 / (s + 2)\u00b2",
+            "1 / (s - 2)\u00b2",
+            "s / (s + 2)\u00b2",
+            "2 / (s + 2)\u00b2"
+        ],
+        "answer": "A"
+    },
+    {
+        "id": 24,
+        "section": "Electrical Engineering",
+        "type": "MCQ",
+        "marks": 1,
+        "negative": 0.33,
+        "question": "The Superposition theorem is valid for:",
+        "options": [
+            "Linear circuits only",
+            "Non-linear circuits only",
+            "Linear and time-variant circuits",
+            "All types of circuits"
+        ],
+        "answer": "A"
+    },
+    {
+        "id": 25,
+        "section": "Electrical Engineering",
+        "type": "NAT",
+        "marks": 1,
+        "negative": 0,
+        "question": "In a series RLC circuit with R = 10 \u03a9, L = 0.1 H, and C = 10 \u00b5F, the damping ratio is:",
+        "answer": 0.5,
+        "tolerance": 0.05
+    },
+    {
+        "id": 26,
+        "section": "Electrical Engineering",
+        "type": "MSQ",
+        "marks": 2,
+        "negative": 0,
+        "question": "Which of the following network theorems are applicable to both ac and dc networks?",
+        "options": [
+            "Thevenin's Theorem",
+            "Norton's Theorem",
+            "Maximum Power Transfer Theorem",
+            "Reciprocity Theorem"
+        ],
+        "answer": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ]
+    },
+    {
+        "id": 27,
+        "section": "Electrical Engineering",
+        "type": "NAT",
+        "marks": 2,
+        "negative": 0,
+        "question": "A source voltage v(t) = 100 sin(100t) V supplies an impedance Z = 3 + j4 \u03a9. The active power delivered in Watts is:",
+        "answer": 600.0,
+        "tolerance": 1.0
+    },
+    {
+        "id": 28,
+        "section": "Electrical Engineering",
+        "type": "MCQ",
+        "marks": 2,
+        "negative": 0.66,
+        "question": "Two coupled inductors have self-inductances L\u2081 = 4 H and L\u2082 = 9 H, and mutual inductance M = 5 H. The coefficient of coupling k is:",
+        "options": [
+            "5/6",
+            "1",
+            "5/36",
+            "1.2"
+        ],
+        "answer": "A"
+    },
+    {
+        "id": 29,
+        "section": "Electrical Engineering",
+        "type": "MCQ",
+        "marks": 1,
+        "negative": 0.33,
+        "question": "Maxwell's equation \u2207 \u00b7 B = 0 represents:",
+        "options": [
+            "Faraday's Law",
+            "Ampere's Circuital Law",
+            "Non-existence of magnetic monopoles",
+            "Gauss's Law for electricity"
+        ],
+        "answer": "C"
+    },
+    {
+        "id": 30,
+        "section": "Electrical Engineering",
+        "type": "NAT",
+        "marks": 1,
+        "negative": 0,
+        "question": "The velocity of electromagnetic wave propagation in a lossless dielectric medium with relative permittivity \u03b5\u1d63 = 4 and relative permeability \u00b5\u1d63 = 1 in units of 10\u2078 m/s is:",
+        "answer": 1.5,
+        "tolerance": 0.05
+    },
+    {
+        "id": 31,
+        "section": "Electrical Engineering",
+        "type": "MSQ",
+        "marks": 2,
+        "negative": 0,
+        "question": "Which of the following boundary conditions are satisfied across the interface between two magnetic media?",
+        "options": [
+            "Tangential component of electric field is continuous",
+            "Normal component of magnetic flux density is continuous",
+            "Tangential component of magnetic field intensity is continuous",
+            "Normal component of electric displacement is continuous"
+        ],
+        "answer": [
+            "B",
+            "C"
+        ]
+    },
+    {
+        "id": 32,
+        "section": "Electrical Engineering",
+        "type": "MCQ",
+        "marks": 2,
+        "negative": 0.66,
+        "question": "Skin depth in a good conductor is inversely proportional to:",
+        "options": [
+            "Square root of frequency",
+            "Conductivity",
+            "Permeability",
+            "All of the above"
+        ],
+        "answer": "A"
+    },
+    {
+        "id": 33,
+        "section": "Electrical Engineering",
+        "type": "MCQ",
+        "marks": 1,
+        "negative": 0.33,
+        "question": "A system is defined by y(t) = x(t/2). This system is:",
+        "options": [
+            "Linear and time-invariant",
+            "Non-linear and time-invariant",
+            "Linear and time-variant",
+            "Non-linear and time-variant"
+        ],
+        "answer": "C"
+    },
+    {
+        "id": 34,
+        "section": "Electrical Engineering",
+        "type": "NAT",
+        "marks": 1,
+        "negative": 0,
+        "question": "The fundamental period of the discrete-time signal x[n] = cos( (3\u03c0n)/4 + \u03c0/3 ) is:",
+        "answer": 8.0,
+        "tolerance": 0.0
+    },
+    {
+        "id": 35,
+        "section": "Electrical Engineering",
+        "type": "MSQ",
+        "marks": 2,
+        "negative": 0,
+        "question": "Which of the following continuous-time systems described by input-output relations are causal?",
+        "options": [
+            "y(t) = x(t - 2)",
+            "y(t) = x(2t)",
+            "y(t) = x(t) + x(t+1)",
+            "y(t) = \u222b_{-\u221e}^t x(\u03c4) d\u03c4"
+        ],
+        "answer": [
+            "A",
+            "D"
+        ]
+    },
+    {
+        "id": 36,
+        "section": "Electrical Engineering",
+        "type": "NAT",
+        "marks": 2,
+        "negative": 0,
+        "question": "Find the energy of the signal x(t) = e^(-3t) u(t).",
+        "answer": 0.167,
+        "tolerance": 0.01
+    },
+    {
+        "id": 37,
+        "section": "Electrical Engineering",
+        "type": "MCQ",
+        "marks": 2,
+        "negative": 0.66,
+        "question": "The ROC of the z-transform of a finite duration causal sequence is:",
+        "options": [
+            "Entire z-plane except z = 0",
+            "Entire z-plane except z = \u221e",
+            "Entire z-plane",
+            "Outside a circle of radius r"
+        ],
+        "answer": "A"
+    },
+    {
+        "id": 38,
+        "section": "Electrical Engineering",
+        "type": "MCQ",
+        "marks": 1,
+        "negative": 0.33,
+        "question": "In a single-phase transformer, the maximum efficiency occurs when:",
+        "options": [
+            "Eddy current losses equal hysteresis losses",
+            "Copper losses equal iron losses",
+            "Core losses are zero",
+            "Operating load is equal to full-load rating"
+        ],
+        "answer": "B"
+    },
+    {
+        "id": 39,
+        "section": "Electrical Engineering",
+        "type": "NAT",
+        "marks": 1,
+        "negative": 0,
+        "question": "A 4-pole, wave-wound DC generator has 400 conductors and runs at 1200 rpm. If the flux per pole is 0.02 Wb, the generated EMF in Volts is:",
+        "answer": 160.0,
+        "tolerance": 0.5
+    },
+    {
+        "id": 40,
+        "section": "Electrical Engineering",
+        "type": "MSQ",
+        "marks": 2,
+        "negative": 0,
+        "question": "Which of the following speed control methods are applicable for controlling the speed of a 3-phase squirrel cage induction motor?",
+        "options": [
+            "Stator voltage control",
+            "Changing the number of stator poles",
+            "Rotor resistance control",
+            "Variable frequency control (V/f control)"
+        ],
+        "answer": [
+            "A",
+            "B",
+            "D"
+        ]
+    },
+    {
+        "id": 41,
+        "section": "Electrical Engineering",
+        "type": "NAT",
+        "marks": 2,
+        "negative": 0,
+        "question": "A 400 V, 50 Hz, 3-phase star-connected synchronous motor has a synchronous reactance of 10 \u03a9 per phase and negligible armature resistance. Operating at full load with 0.8 leading power factor and power angle 15\u00b0, find the magnitude of line-to-line excitation voltage in Volts.",
+        "answer": 350.0,
+        "tolerance": 5.0
+    },
+    {
+        "id": 42,
+        "section": "Electrical Engineering",
+        "type": "MSQ",
+        "marks": 2,
+        "negative": 0,
+        "question": "Which of the following conditions must be satisfied for parallel operation of two single-phase transformers?",
+        "options": [
+            "Same voltage ratings (Primary and Secondary)",
+            "Identical kVA ratings",
+            "Same percentage impedance",
+            "Same polarity and phase sequence"
+        ],
+        "answer": [
+            "A",
+            "C",
+            "D"
+        ]
+    },
+    {
+        "id": 43,
+        "section": "Electrical Engineering",
+        "type": "MCQ",
+        "marks": 2,
+        "negative": 0.66,
+        "question": "A 3-phase induction motor is operating at slip s. The ratio of rotor copper loss to rotor input power is equal to:",
+        "options": [
+            "s",
+            "1 - s",
+            "1 / s",
+            "s / (1 - s)"
+        ],
+        "answer": "A"
+    },
+    {
+        "id": 44,
+        "section": "Electrical Engineering",
+        "type": "MCQ",
+        "marks": 1,
+        "negative": 0.33,
+        "question": "Bundle conductors are used in transmission lines primarily to:",
+        "options": [
+            "Reduce corona loss and line reactance",
+            "Increase tower height",
+            "Increase capacitance",
+            "Reduce resistance"
+        ],
+        "answer": "A"
+    },
+    {
+        "id": 45,
+        "section": "Electrical Engineering",
+        "type": "NAT",
+        "marks": 1,
+        "negative": 0,
+        "question": "A 100 MVA, 11 kV synchronous generator has a reactance of 20%. The per-unit reactance on a base of 50 MVA and 22 kV is:",
+        "answer": 0.025,
+        "tolerance": 0.001
+    },
+    {
+        "id": 46,
+        "section": "Electrical Engineering",
+        "type": "MSQ",
+        "marks": 2,
+        "negative": 0,
+        "question": "Which of the following methods are used for improving transient stability of a power system?",
+        "options": [
+            "Use of high-speed circuit breakers",
+            "Quick response excitation systems",
+            "Auto-reclosing breakers",
+            "Increasing system reactance"
+        ],
+        "answer": [
+            "A",
+            "B",
+            "C"
+        ]
+    },
+    {
+        "id": 47,
+        "section": "Electrical Engineering",
+        "type": "NAT",
+        "marks": 2,
+        "negative": 0,
+        "question": "A lossless transmission line has characteristic impedance Zc = 400 \u03a9 and phase constant \u03b2 = 0.02 rad/km at 50 Hz. The inductance per km in mH/km is:",
+        "answer": 1.273,
+        "tolerance": 0.05
+    },
+    {
+        "id": 48,
+        "section": "Electrical Engineering",
+        "type": "MCQ",
+        "marks": 2,
+        "negative": 0.66,
+        "question": "For a fault at the terminals of a generator, the fault current is maximum for which type of fault?",
+        "options": [
+            "Three-phase fault",
+            "Line-to-Ground fault",
+            "Line-to-Line fault",
+            "Double Line-to-Ground fault"
+        ],
+        "answer": "B"
+    },
+    {
+        "id": 49,
+        "section": "Electrical Engineering",
+        "type": "MCQ",
+        "marks": 2,
+        "negative": 0.66,
+        "question": "Economic dispatch in Electrical Engineering aims to minimize:",
+        "options": [
+            "Total fuel cost",
+            "Transmission losses",
+            "Generator reactive power",
+            "Fault current"
+        ],
+        "answer": "A"
+    },
+    {
+        "id": 50,
+        "section": "Electrical Engineering",
+        "type": "MCQ",
+        "marks": 1,
+        "negative": 0.33,
+        "question": "The characteristic equation of a closed-loop system is s\u00b2 + 4s + 16 = 0. The damping ratio and natural frequency are:",
+        "options": [
+            "0.5, 4 rad/s",
+            "1.0, 2 rad/s",
+            "0.25, 4 rad/s",
+            "0.5, 2 rad/s"
+        ],
+        "answer": "A"
+    },
+    {
+        "id": 51,
+        "section": "Electrical Engineering",
+        "type": "NAT",
+        "marks": 1,
+        "negative": 0,
+        "question": "The steady-state error of type-1 system for a unit ramp input is:",
+        "answer": 0.5,
+        "tolerance": 0.0
+    },
+    {
+        "id": 52,
+        "section": "Electrical Engineering",
+        "type": "MSQ",
+        "marks": 2,
+        "negative": 0,
+        "question": "Which of the following statements about Bode plots are correct?",
+        "options": [
+            "Gain margin can be determined from magnitude plot",
+            "Phase margin can be determined from phase plot",
+            "Resonant peak is directly related to phase margin",
+            "Phase crossover frequency is where phase angle is 0\u00b0"
+        ],
+        "answer": [
+            "A",
+            "B",
+            "C"
+        ]
+    },
+    {
+        "id": 53,
+        "section": "Electrical Engineering",
+        "type": "NAT",
+        "marks": 2,
+        "negative": 0,
+        "question": "The characteristic equation of a control system is s\u00b3 + 5s\u00b2 + (K+6)s + K = 0. Using Routh-Hurwitz criterion, find the marginal value of K for stability limit.",
+        "answer": 24.0,
+        "tolerance": 0.1
+    },
+    {
+        "id": 54,
+        "section": "Electrical Engineering",
+        "type": "MCQ",
+        "marks": 2,
+        "negative": 0.66,
+        "question": "State feedback controller u = -Kx can place poles arbitrarily if the system is:",
+        "options": [
+            "Controllable",
+            "Observable",
+            "Stable",
+            "Minimal"
+        ],
+        "answer": "A"
+    },
+    {
+        "id": 55,
+        "section": "Electrical Engineering",
+        "type": "MCQ",
+        "marks": 1,
+        "negative": 0.33,
+        "question": "PMMC instruments are used for the measurement of:",
+        "options": [
+            "AC only",
+            "DC only",
+            "Both AC and DC",
+            "High frequency AC"
+        ],
+        "answer": "B"
+    },
+    {
+        "id": 56,
+        "section": "Electrical Engineering",
+        "type": "NAT",
+        "marks": 2,
+        "negative": 0,
+        "question": "A 0-150 V voltmeter has a guaranteed accuracy of 1% of full-scale deflection. If the meter reads 75 V, the limiting percentage error is:",
+        "answer": 2.0,
+        "tolerance": 0.0
+    },
+    {
+        "id": 57,
+        "section": "Electrical Engineering",
+        "type": "MSQ",
+        "marks": 2,
+        "negative": 0,
+        "question": "Which of the following bridges are used for measurement of inductance?",
+        "options": [
+            "Maxwell's Bridge",
+            "Hay's Bridge",
+            "Schering Bridge",
+            "Anderson Bridge"
+        ],
+        "answer": [
+            "A",
+            "B",
+            "D"
+        ]
+    },
+    {
+        "id": 58,
+        "section": "Electrical Engineering",
+        "type": "MCQ",
+        "marks": 1,
+        "negative": 0.33,
+        "question": "The minimum number of two-input NAND gates required to implement an XOR function is:",
+        "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+        ],
+        "answer": "B"
+    },
+    {
+        "id": 59,
+        "section": "Electrical Engineering",
+        "type": "NAT",
+        "marks": 2,
+        "negative": 0,
+        "question": "An ideal operational amplifier has an open-loop gain of 10\u2075. If it is configured in a non-inverting amplifier with feedback resistors R\u2081 = 1 k\u03a9 and R_f = 9 k\u03a9, the closed-loop gain is:",
+        "answer": 10.0,
+        "tolerance": 0.05
+    },
+    {
+        "id": 60,
+        "section": "Electrical Engineering",
+        "type": "MSQ",
+        "marks": 2,
+        "negative": 0,
+        "question": "Which of the following logic families has the lowest propagation delay-power product (highest speed-power efficiency)?",
+        "options": [
+            "CMOS",
+            "TTL",
+            "ECL",
+            "RTL"
+        ],
+        "answer": [
+            "A"
+        ]
+    },
+    {
+        "id": 61,
+        "section": "Electrical Engineering",
+        "type": "MCQ",
+        "marks": 2,
+        "negative": 0.66,
+        "question": "A 4-bit R-2R ladder DAC has a reference voltage of 10 V. The analog output voltage for digital input 1000 is:",
+        "options": [
+            "5 V",
+            "2.5 V",
+            "8 V",
+            "6.25 V"
+        ],
+        "answer": "A"
+    },
+    {
+        "id": 62,
+        "section": "Electrical Engineering",
+        "type": "MCQ",
+        "marks": 1,
+        "negative": 0.33,
+        "question": "A thyristor is turned on by applying:",
+        "options": [
+            "Positive gate pulse when anode is positive",
+            "Negative gate pulse when anode is positive",
+            "Positive gate pulse when anode is negative",
+            "Anode voltage alone without gate pulse"
+        ],
+        "answer": "A"
+    },
+    {
+        "id": 63,
+        "section": "Electrical Engineering",
+        "type": "NAT",
+        "marks": 1,
+        "negative": 0,
+        "question": "For a step-down Buck converter operating in continuous conduction mode with input DC voltage 50 V and duty cycle 0.4, the output voltage in Volts is:",
+        "answer": 20.0,
+        "tolerance": 0.0
+    },
+    {
+        "id": 64,
+        "section": "Electrical Engineering",
+        "type": "MSQ",
+        "marks": 2,
+        "negative": 0,
+        "question": "Which of the following power semiconductor devices are current-controlled?",
+        "options": [
+            "IGBT",
+            "MOSFET",
+            "BJT",
+            "Thyristor (SCR)"
+        ],
+        "answer": [
+            "C"
+        ]
+    },
+    {
+        "id": 65,
+        "section": "Electrical Engineering",
+        "type": "NAT",
+        "marks": 2,
+        "negative": 0,
+        "question": "A single-phase full-bridge diode rectifier supplies a resistive load of 10 \u03a9 from a 230 V, 50 Hz AC supply. The average load current in Amperes is:",
+        "answer": 20.7,
+        "tolerance": 0.2
+    }
+]

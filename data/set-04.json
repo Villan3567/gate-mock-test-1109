@@ -1,0 +1,914 @@
+[
+  {
+    "id": 1,
+    "section": "General Aptitude",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "A shop offers a 20% discount on a marked price. If the selling price is ₹960, what was the marked price?",
+    "options": [
+      "₹1,152",
+      "₹1,200",
+      "₹1,250",
+      "₹1,280"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 2,
+    "section": "General Aptitude",
+    "type": "NAT",
+    "marks": 1,
+    "negative": 0,
+    "question": "A number is increased by 25% and then decreased by 20%. The final value is 180. The original value is",
+    "answer": 180,
+    "tolerance": 0.01
+  },
+  {
+    "id": 3,
+    "section": "General Aptitude",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "Choose the word that is closest in meaning to 'mitigate'.",
+    "options": [
+      "Intensify",
+      "Reduce",
+      "Ignore",
+      "Predict"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 4,
+    "section": "General Aptitude",
+    "type": "MSQ",
+    "marks": 1,
+    "negative": 0,
+    "question": "Which of the following statements are logically valid?",
+    "options": [
+      "If all A are B and all B are C, then all A are C",
+      "If some A are B and some B are C, then some A are C",
+      "If no A is B, then no B is A",
+      "If all A are B, then all B are A"
+    ],
+    "answer": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": 5,
+    "section": "General Aptitude",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "The average of five consecutive integers is 24. The largest integer is",
+    "options": [
+      "24",
+      "25",
+      "26",
+      "27"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 6,
+    "section": "General Aptitude",
+    "type": "NAT",
+    "marks": 1,
+    "negative": 0,
+    "question": "A train travels 150 km in 2.5 hours. Its average speed in km/h is",
+    "answer": 60,
+    "tolerance": 0.01
+  },
+  {
+    "id": 7,
+    "section": "General Aptitude",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "If P implies Q and Q is false, which conclusion necessarily follows?",
+    "options": [
+      "P is true",
+      "P is false",
+      "P may be true or false",
+      "Q becomes true"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 8,
+    "section": "General Aptitude",
+    "type": "MSQ",
+    "marks": 1,
+    "negative": 0,
+    "question": "A rectangle has perimeter 20 units. Which of the following dimensions give an area of 24 square units?",
+    "options": [
+      "4×6",
+      "6×4",
+      "3×7",
+      "2×8"
+    ],
+    "answer": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": 9,
+    "section": "General Aptitude",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "Complete the analogy: Thermometer : Temperature :: Barometer :",
+    "options": [
+      "Humidity",
+      "Pressure",
+      "Wind speed",
+      "Altitude"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 10,
+    "section": "General Aptitude",
+    "type": "NAT",
+    "marks": 1,
+    "negative": 0,
+    "question": "A sequence begins 2, 6, 12, 20, 30, ... . The next term is",
+    "answer": 42,
+    "tolerance": 0.01
+  },
+  {
+    "id": 11,
+    "section": "Engineering Mathematics",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.33,
+    "question": "The eigenvalues of a triangular matrix are equal to its",
+    "options": [
+      "row sums",
+      "column sums",
+      "diagonal elements",
+      "determinant only"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 12,
+    "section": "Engineering Mathematics",
+    "type": "NAT",
+    "marks": 1,
+    "negative": 0,
+    "question": "The determinant of [[2,1],[3,4]] is",
+    "answer": 5,
+    "tolerance": 0.01
+  },
+  {
+    "id": 13,
+    "section": "Engineering Mathematics",
+    "type": "MSQ",
+    "marks": 2,
+    "negative": 0,
+    "question": "For a continuous probability density function, which properties must hold?",
+    "options": [
+      "f(x)≥0",
+      "Integral of f(x) over the entire range equals 1",
+      "f(x) must be less than 1 everywhere",
+      "Probability at any single exact point must be positive"
+    ],
+    "answer": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": 14,
+    "section": "Engineering Mathematics",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "The Laplace transform of t e^(−at), for Re(s)>−a, is",
+    "options": [
+      "1/(s+a)",
+      "1/(s+a)^2",
+      "s/(s+a)",
+      "a/(s+a)^2"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 15,
+    "section": "Engineering Mathematics",
+    "type": "NAT",
+    "marks": 1,
+    "negative": 0,
+    "question": "The mean of the numbers 2, 4, 6, 8, 10 is",
+    "answer": 6,
+    "tolerance": 0.01
+  },
+  {
+    "id": 16,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.33,
+    "question": "For two resistors of 6 Ω and 3 Ω connected in parallel, the equivalent resistance is",
+    "options": [
+      "9 Ω",
+      "3 Ω",
+      "2 Ω",
+      "1.5 Ω"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 17,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 1,
+    "negative": 0,
+    "question": "A 12 V source is connected across a 4 Ω resistor. The current in amperes is",
+    "answer": 3,
+    "tolerance": 0.01
+  },
+  {
+    "id": 18,
+    "section": "Electrical Engineering",
+    "type": "MSQ",
+    "marks": 2,
+    "negative": 0,
+    "question": "Which statements about an ideal voltage source are correct?",
+    "options": [
+      "Its terminal voltage is independent of load current",
+      "Its internal resistance is zero",
+      "It can supply any current required by the load",
+      "Its terminal voltage is always zero"
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": 19,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "For a series RLC circuit at resonance, the impedance is",
+    "options": [
+      "purely inductive",
+      "purely capacitive",
+      "purely resistive",
+      "zero for any R"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 20,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "negative": 0,
+    "question": "A balanced 3-phase load consumes 12 kW at 400 V line voltage and unity power factor. The line current in amperes is approximately",
+    "answer": 17.32,
+    "tolerance": 0.05
+  },
+  {
+    "id": 21,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.33,
+    "question": "Gauss's law relates electric flux through a closed surface to",
+    "options": [
+      "enclosed charge",
+      "surface area only",
+      "magnetic flux",
+      "electric potential only"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 22,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 1,
+    "negative": 0,
+    "question": "The magnitude of electric field in free space due to a 1 nC point charge at 1 m distance is approximately, in N/C",
+    "answer": 9,
+    "tolerance": 0.01
+  },
+  {
+    "id": 23,
+    "section": "Electrical Engineering",
+    "type": "MSQ",
+    "marks": 2,
+    "negative": 0,
+    "question": "Which statements about magnetic materials are correct?",
+    "options": [
+      "Ferromagnetic materials can exhibit hysteresis",
+      "Relative permeability of vacuum is 1",
+      "Paramagnetic materials are weakly attracted by magnetic fields",
+      "Diamagnetic materials have strongly positive susceptibility"
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": 24,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "The intrinsic impedance of free space is approximately",
+    "options": [
+      "120π Ω",
+      "60π Ω",
+      "377π Ω",
+      "1/(120π) Ω"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 25,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "negative": 0,
+    "question": "An electromagnetic wave in free space travels at approximately 3×10^8 m/s. Its wavelength at 100 MHz, in meters, is",
+    "answer": 3,
+    "tolerance": 0.01
+  },
+  {
+    "id": 26,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.33,
+    "question": "The convolution of a signal x(t) with δ(t−t0) is",
+    "options": [
+      "x(t−t0)",
+      "x(t+t0)",
+      "δ(t−t0)",
+      "x(t)δ(t0)"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 27,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 1,
+    "negative": 0,
+    "question": "For x(t)=cos(100πt), the frequency in hertz is",
+    "answer": 50,
+    "tolerance": 0.01
+  },
+  {
+    "id": 28,
+    "section": "Electrical Engineering",
+    "type": "MSQ",
+    "marks": 2,
+    "negative": 0,
+    "question": "Which operations can alter the time scale of a continuous-time signal?",
+    "options": [
+      "x(2t)",
+      "x(t/2)",
+      "x(t−2)",
+      "x(t)+1"
+    ],
+    "answer": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": 29,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "The region of convergence of the Laplace transform of a right-sided exponentially decaying signal includes",
+    "options": [
+      "a right half-plane",
+      "a left half-plane only",
+      "the entire jω axis only",
+      "no finite region"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 30,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "negative": 0,
+    "question": "An ideal low-pass filter has cutoff frequency 5 kHz. The minimum sampling frequency for a bandlimited signal occupying 0 to 5 kHz is, in kHz",
+    "answer": 10,
+    "tolerance": 0.01
+  },
+  {
+    "id": 31,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.33,
+    "question": "In a transformer, the induced emf is proportional to",
+    "options": [
+      "N/f",
+      "fNΦm",
+      "N/Φm",
+      "f/ NΦm"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 32,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 1,
+    "negative": 0,
+    "question": "A 50 Hz, 8-pole induction motor has synchronous speed in rpm equal to",
+    "answer": 750,
+    "tolerance": 0.01
+  },
+  {
+    "id": 33,
+    "section": "Electrical Engineering",
+    "type": "MSQ",
+    "marks": 2,
+    "negative": 0,
+    "question": "Which losses occur in a practical transformer?",
+    "options": [
+      "Copper loss",
+      "Core loss",
+      "Mechanical windage loss in the transformer magnetic core",
+      "Stray load loss"
+    ],
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ]
+  },
+  {
+    "id": 34,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "A 3-phase induction motor has synchronous speed 1500 rpm and rotor speed 1440 rpm. The slip is",
+    "options": [
+      "2%",
+      "4%",
+      "6%",
+      "8%"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 35,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "negative": 0,
+    "question": "A DC motor has back emf 220 V, armature resistance 0.5 Ω and armature current 20 A. Its terminal voltage in volts is",
+    "answer": 230,
+    "tolerance": 0.01
+  },
+  {
+    "id": 36,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.33,
+    "question": "A synchronous motor operating under over-excitation generally draws",
+    "options": [
+      "lagging current",
+      "leading current",
+      "zero current",
+      "current exactly in phase with voltage irrespective of load"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 37,
+    "section": "Electrical Engineering",
+    "type": "MSQ",
+    "marks": 2,
+    "negative": 0,
+    "question": "Which methods can be used to control the speed of a DC shunt motor?",
+    "options": [
+      "Armature voltage control",
+      "Field flux control",
+      "Armature resistance control",
+      "Changing transformer turns ratio in the armature circuit only"
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": 38,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 1,
+    "negative": 0,
+    "question": "A 4-pole, 50 Hz induction motor runs at 1470 rpm. Its slip in percent is",
+    "answer": 2,
+    "tolerance": 0.01
+  },
+  {
+    "id": 39,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.33,
+    "question": "The main purpose of a circuit breaker is to",
+    "options": [
+      "measure power factor",
+      "interrupt fault current",
+      "increase transmission voltage",
+      "improve generator efficiency"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 40,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 1,
+    "negative": 0,
+    "question": "A 50 Hz transmission line has a wavelength, in km, of approximately",
+    "answer": 6000,
+    "tolerance": 1
+  },
+  {
+    "id": 41,
+    "section": "Electrical Engineering",
+    "type": "MSQ",
+    "marks": 2,
+    "negative": 0,
+    "question": "Which are common causes of power-system faults?",
+    "options": [
+      "Lightning",
+      "Insulation failure",
+      "Tree contact with overhead lines",
+      "Perfectly balanced load"
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": 42,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "For a lossless transmission line, the maximum steady-state power transfer occurs when the power angle δ is",
+    "options": [
+      "0°",
+      "30°",
+      "90°",
+      "180°"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 43,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "negative": 0,
+    "question": "A 132 kV, 3-phase line transmits 100 MW at unity power factor. The line current in amperes is approximately",
+    "answer": 437.39,
+    "tolerance": 0.5
+  },
+  {
+    "id": 44,
+    "section": "Electrical Engineering",
+    "type": "MSQ",
+    "marks": 2,
+    "negative": 0,
+    "question": "Which statements about a power-system bus are correct?",
+    "options": [
+      "A slack bus specifies voltage magnitude and angle",
+      "A PV bus specifies active power and voltage magnitude",
+      "A PQ bus specifies active and reactive power",
+      "The slack bus balances system real and reactive power mismatch"
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ]
+  },
+  {
+    "id": 45,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.33,
+    "question": "A lightning arrester is connected between",
+    "options": [
+      "line and ground",
+      "two generators in series",
+      "neutral and neutral only",
+      "load and load"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 46,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "negative": 0,
+    "question": "A 10 MVA, 11 kV, three-phase transformer has a rated line current on the 11 kV side of approximately, in amperes",
+    "answer": 524.86,
+    "tolerance": 0.5
+  },
+  {
+    "id": 47,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.33,
+    "question": "A system is stable in the BIBO sense if its impulse response is",
+    "options": [
+      "absolutely integrable",
+      "always increasing",
+      "nonzero forever",
+      "purely imaginary"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 48,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 1,
+    "negative": 0,
+    "question": "For G(s)=1/(s+5), the DC gain is",
+    "answer": 0.2,
+    "tolerance": 0.001
+  },
+  {
+    "id": 49,
+    "section": "Electrical Engineering",
+    "type": "MSQ",
+    "marks": 2,
+    "negative": 0,
+    "question": "Which are frequency-domain stability measures?",
+    "options": [
+      "Gain margin",
+      "Phase margin",
+      "Peak overshoot",
+      "Gain crossover frequency"
+    ],
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ]
+  },
+  {
+    "id": 50,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "For a standard underdamped second-order system, increasing damping ratio generally",
+    "options": [
+      "increases overshoot",
+      "reduces overshoot",
+      "makes natural frequency zero",
+      "always makes rise time zero"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 51,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "negative": 0,
+    "question": "For a unity-feedback system with G(s)=K/s, the velocity error constant Kv equals",
+    "answer": "K",
+    "tolerance": 0.001
+  },
+  {
+    "id": 52,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.33,
+    "question": "A moving-iron instrument can measure",
+    "options": [
+      "AC only",
+      "DC only",
+      "both AC and DC",
+      "frequency only"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 53,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 1,
+    "negative": 0,
+    "question": "A 10-bit ADC has an input range of 0 to 5 V. Its ideal LSB size in millivolts is approximately",
+    "answer": 4.883,
+    "tolerance": 0.01
+  },
+  {
+    "id": 54,
+    "section": "Electrical Engineering",
+    "type": "MSQ",
+    "marks": 1,
+    "negative": 0,
+    "question": "Which can contribute to measurement error?",
+    "options": [
+      "Instrument loading",
+      "Calibration error",
+      "Environmental effects",
+      "Mathematical exactness of the measured quantity"
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": 55,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.33,
+    "question": "An ideal diode conducts when it is",
+    "options": [
+      "reverse biased",
+      "forward biased",
+      "unbiased only",
+      "connected to ground only"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 56,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 1,
+    "negative": 0,
+    "question": "An ideal non-inverting op-amp has Rf=9 kΩ and R1=1 kΩ. Its voltage gain is",
+    "answer": 10,
+    "tolerance": 0.01
+  },
+  {
+    "id": 57,
+    "section": "Electrical Engineering",
+    "type": "MSQ",
+    "marks": 1,
+    "negative": 0,
+    "question": "Which are desirable properties of an ideal op-amp?",
+    "options": [
+      "Infinite open-loop gain",
+      "Infinite input resistance",
+      "Zero output resistance",
+      "Infinite output resistance"
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": 58,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.33,
+    "question": "The Boolean expression A + A'B simplifies to",
+    "options": [
+      "A",
+      "A+B",
+      "AB",
+      "B"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 59,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 1,
+    "negative": 0,
+    "question": "A 3-bit unsigned binary counter can represent how many distinct states?",
+    "answer": 8,
+    "tolerance": 0.01
+  },
+  {
+    "id": 60,
+    "section": "Electrical Engineering",
+    "type": "MSQ",
+    "marks": 1,
+    "negative": 0,
+    "question": "Which are sequential circuits?",
+    "options": [
+      "Flip-flop",
+      "Counter",
+      "Shift register",
+      "Multiplexer"
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": 61,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "An IGBT combines characteristics most closely associated with a",
+    "options": [
+      "MOS gate and bipolar conduction path",
+      "pure resistor and capacitor",
+      "transformer and inductor",
+      "diode and fuse only"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 62,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 1,
+    "negative": 0,
+    "question": "An ideal buck converter has input 200 V and duty ratio 0.25. Its average output voltage is",
+    "answer": 50,
+    "tolerance": 0.01
+  },
+  {
+    "id": 63,
+    "section": "Electrical Engineering",
+    "type": "MSQ",
+    "marks": 1,
+    "negative": 0,
+    "question": "Which are advantages of PWM in a DC-DC converter?",
+    "options": [
+      "Controllable average output voltage",
+      "High efficiency due to switching operation",
+      "Easy implementation of voltage regulation",
+      "It necessarily eliminates all output ripple"
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": 64,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "In a balanced three-phase system, the instantaneous sum of the three phase currents is",
+    "options": [
+      "zero",
+      "maximum",
+      "equal to line voltage",
+      "always positive"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 65,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 1,
+    "negative": 0,
+    "question": "A 5 kW load operates at 0.8 power factor lagging. Its reactive power in kVAr is",
+    "answer": 3.75,
+    "tolerance": 0.01
+  }
+]

@@ -1,0 +1,877 @@
+[
+  {
+    "id": 1,
+    "section": "General Aptitude",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "Choose the word most nearly OPPOSITE in meaning to \"PARSIMONIOUS\":",
+    "options": [
+      "Frugal",
+      "Lavish",
+      "Cautious",
+      "Reserved"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 2,
+    "section": "General Aptitude",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "Select the grammatically correct sentence:",
+    "options": [
+      "Neither of the boys were present.",
+      "Neither of the boys was present.",
+      "Neither of the boy were present.",
+      "Neither of boys was present."
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 3,
+    "section": "General Aptitude",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "If \"CODE\" is written as \"DPEF\" (each letter shifted forward by one), how is \"WORK\" written in the same code?",
+    "options": [
+      "XPSL",
+      "XQSL",
+      "XPSK",
+      "XQSK"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 4,
+    "section": "General Aptitude",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "Find the next term: 2, 6, 12, 20, 30, ?",
+    "options": [
+      "40",
+      "42",
+      "44",
+      "36"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 5,
+    "section": "General Aptitude",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "Statement: \"All engineers are punctual. Some punctual people are managers.\"\nConclusion: \"Some engineers are managers.\"\nDoes the conclusion logically follow?",
+    "options": [
+      "Conclusion follows",
+      "Conclusion does not follow",
+      "Cannot be determined",
+      "Data insufficient"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 6,
+    "section": "General Aptitude",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "A train 150 m long crosses a platform 250 m long in 20 seconds. What is the speed of the train in km/h?",
+    "options": [
+      "54",
+      "60",
+      "72",
+      "80"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 7,
+    "section": "General Aptitude",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "In a class, the ratio of boys to girls is 3:2. If 8 more girls join, the ratio becomes 3:4. Find the original number of boys.",
+    "options": [
+      "12",
+      "18",
+      "24",
+      "9"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 8,
+    "section": "General Aptitude",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "A company's expenses: Salaries 40%, Rent 15%, Utilities 10%, Marketing 20%, Miscellaneous 15%, of a total of ₹50 lakh. How much more is spent on Salaries than Marketing?",
+    "options": [
+      "₹8 lakh",
+      "₹10 lakh",
+      "₹12 lakh",
+      "₹6 lakh"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 9,
+    "section": "General Aptitude",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "X can complete a job in 12 days, Y in 18 days. They work together for 4 days, then X leaves. In how many more days will Y finish the remaining work?",
+    "options": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 10,
+    "section": "General Aptitude",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "Five friends P, Q, R, S, T sit in a row. Q is immediately to the right of P. R is at one of the ends. S is between R and T. Which must be true?",
+    "options": [
+      "P is at an end",
+      "T is at an end",
+      "Q is at an end",
+      "Cannot be determined"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 11,
+    "section": "Engineering Mathematics",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "The rank of the matrix\n[1 2 3]\n[2 4 6]\n[1 1 1]\nis:",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 12,
+    "section": "Engineering Mathematics",
+    "type": "NAT",
+    "marks": 1,
+    "question": "The value of lim(x→0) [sin(3x)/x] is ______.",
+    "answer": 3,
+    "tolerance": 0.01
+  },
+  {
+    "id": 13,
+    "section": "Engineering Mathematics",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "Eigenvalues of the matrix\n[4 1]\n[2 3]\nare:",
+    "options": [
+      "2, 5",
+      "1, 6",
+      "3, 4",
+      "2, 3"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 14,
+    "section": "Engineering Mathematics",
+    "type": "NAT",
+    "marks": 2,
+    "question": "Solve dy/dx + y = 1 with y(0) = 0. Find y(1), rounded to 2 decimals.",
+    "answer": 0.63,
+    "tolerance": 0.02
+  },
+  {
+    "id": 15,
+    "section": "Engineering Mathematics",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "For a continuous random variable with PDF f(x) = 2x for 0 ≤ x ≤ 1, the mean is:",
+    "options": [
+      "1/3",
+      "1/2",
+      "2/3",
+      "1"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 16,
+    "section": "Engineering Mathematics",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "The residue of f(z) = e^z / z² at z = 0 is:",
+    "options": [
+      "0",
+      "1",
+      "e",
+      "2"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 17,
+    "section": "Engineering Mathematics",
+    "type": "MSQ",
+    "marks": 2,
+    "question": "Which of the following statements about the Laplace Transform are TRUE?",
+    "options": [
+      "It converts a time-domain differential equation into an algebraic equation",
+      "The Laplace Transform of a unit step function is 1/s",
+      "The final value theorem applies only if all poles of sF(s) lie in the left half-plane (or a simple pole at the origin)",
+      "The Laplace Transform of e^(at)u(t) is 1/(s+a)"
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": 18,
+    "section": "Engineering Mathematics",
+    "type": "NAT",
+    "marks": 2,
+    "question": "Using Newton-Raphson starting at x0 = 2 for f(x) = x² − 5, one iteration gives x1 = ______ (2 decimals).",
+    "answer": 2.25,
+    "tolerance": 0.01
+  },
+  {
+    "id": 19,
+    "section": "Core Electrical Engineering",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "In a series R-L-C circuit at resonance, the impedance is:",
+    "options": [
+      "Maximum and inductive",
+      "Minimum and resistive",
+      "Maximum and capacitive",
+      "Zero"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 20,
+    "section": "Core Electrical Engineering",
+    "type": "NAT",
+    "marks": 1,
+    "question": "A 10 Ω, a 20 Ω, and a 30 Ω resistor are connected in parallel. Equivalent resistance (Ω, 2 decimals) = ______.",
+    "answer": 5.45,
+    "tolerance": 0.05
+  },
+  {
+    "id": 21,
+    "section": "Core Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "question": "The Thevenin equivalent resistance seen by a load is 8 Ω. For maximum power transfer, the load resistance (in Ω) should be ______.",
+    "answer": 8,
+    "tolerance": 0.01
+  },
+  {
+    "id": 22,
+    "section": "Core Electrical Engineering",
+    "type": "NAT",
+    "marks": 1,
+    "question": "For a two-port network, h21 = 50 (short-circuit forward current gain, dimensionless). State the value of h21 = ______.",
+    "answer": 50,
+    "tolerance": 0.5
+  },
+  {
+    "id": 23,
+    "section": "Core Electrical Engineering",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "The Q-factor of a series RLC circuit is given by:",
+    "options": [
+      "R√(L/C)",
+      "(1/R)√(L/C)",
+      "1/(R√(LC))",
+      "R²LC"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 24,
+    "section": "Core Electrical Engineering",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "The divergence of a magnetic flux density B is:",
+    "options": [
+      "Equal to charge density",
+      "Always zero",
+      "Equal to current density",
+      "Undefined"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 25,
+    "section": "Core Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "Two point charges +Q and −Q are separated by distance d. The electric field at the midpoint on the line joining them is directed:",
+    "options": [
+      "From +Q to −Q, magnitude zero",
+      "From +Q to −Q, nonzero magnitude",
+      "From −Q to +Q, nonzero magnitude",
+      "Zero"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 26,
+    "section": "Core Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "question": "A parallel plate capacitor: plate area 0.02 m², separation 1 mm, dielectric εr = 4 (ε0 = 8.85×10⁻¹² F/m). Capacitance (nF, 2 decimals) = ______.",
+    "answer": 0.71,
+    "tolerance": 0.05
+  },
+  {
+    "id": 27,
+    "section": "Core Electrical Engineering",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "A system is BIBO stable if its impulse response is:",
+    "options": [
+      "Absolutely integrable",
+      "Periodic",
+      "Causal only",
+      "Always positive"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 28,
+    "section": "Core Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "The Fourier Transform of x(t) = δ(t − t0) is:",
+    "options": [
+      "1",
+      "e^(−jωt0)",
+      "e^(jωt0)",
+      "δ(ω)"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 29,
+    "section": "Core Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "question": "For h[n] = (0.5)^n u[n], the DC gain (sum of h[n] over all n) = ______.",
+    "answer": 2,
+    "tolerance": 0.01
+  },
+  {
+    "id": 30,
+    "section": "Core Electrical Engineering",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "Convolution of x(t) with δ(t − 2) gives:",
+    "options": [
+      "x(t)",
+      "x(t−2)",
+      "x(t+2)",
+      "2x(t)"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 31,
+    "section": "Core Electrical Engineering",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "The number of open-loop poles in the right-half s-plane, via the Routh-Hurwitz criterion, relates directly to the system's:",
+    "options": [
+      "Gain margin",
+      "Absolute stability",
+      "Steady-state error",
+      "Bandwidth"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 32,
+    "section": "Core Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "For a unity feedback system with G(s) = K / [s(s+2)], the value of K for a damping ratio of 0.5 is:",
+    "options": [
+      "1",
+      "2",
+      "4",
+      "8"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 33,
+    "section": "Core Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "question": "A second-order system has ωn = 10 rad/s and ζ = 0.6. The peak overshoot (%) is approximately ______ (nearest integer).",
+    "answer": 9,
+    "tolerance": 1.5
+  },
+  {
+    "id": 34,
+    "section": "Core Electrical Engineering",
+    "type": "MSQ",
+    "marks": 2,
+    "question": "Which of the following INCREASE the steady-state error of a unity feedback control system?",
+    "options": [
+      "Decreasing the loop gain K",
+      "Adding an integrator to the forward path",
+      "Increasing the system type by one",
+      "Using a Type-0 system for a ramp input"
+    ],
+    "answer": [
+      "A",
+      "D"
+    ]
+  },
+  {
+    "id": 35,
+    "section": "Core Electrical Engineering",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "In a Bode plot, a pole at the origin contributes a slope of:",
+    "options": [
+      "+20 dB/decade",
+      "−20 dB/decade",
+      "−40 dB/decade",
+      "0 dB/decade"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 36,
+    "section": "Core Electrical Engineering",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "The synchronous speed of a 4-pole, 50 Hz induction motor is:",
+    "options": [
+      "1000 rpm",
+      "1500 rpm",
+      "3000 rpm",
+      "750 rpm"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 37,
+    "section": "Core Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "question": "A 3-phase induction motor runs at 1440 rpm on a 50 Hz, 4-pole supply. Slip (%, 2 decimals) = ______.",
+    "answer": 4,
+    "tolerance": 0.1
+  },
+  {
+    "id": 38,
+    "section": "Core Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "In a DC shunt motor, if the field circuit resistance is increased, the speed:",
+    "options": [
+      "Decreases",
+      "Increases",
+      "Remains constant",
+      "Becomes zero"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 39,
+    "section": "Core Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "question": "A single-phase transformer has 400 primary turns and 100 secondary turns; primary voltage 230 V. Secondary voltage (V) = ______.",
+    "answer": 57.5,
+    "tolerance": 0.5
+  },
+  {
+    "id": 40,
+    "section": "Core Electrical Engineering",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "The purpose of a starter in a DC motor is to:",
+    "options": [
+      "Increase starting torque",
+      "Limit starting current",
+      "Reverse rotation",
+      "Improve efficiency"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 41,
+    "section": "Core Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "For a synchronous generator, E = 4.44 f φ N Kw. Doubling frequency (flux, turns constant) causes emf to:",
+    "options": [
+      "Halve",
+      "Double",
+      "Remain same",
+      "Quadruple"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 42,
+    "section": "Core Electrical Engineering",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "The main advantage of HVDC over HVAC for long-distance bulk power transfer is:",
+    "options": [
+      "Lower conductor cost",
+      "No reactive power compensation needed for the line",
+      "Easier voltage transformation",
+      "Higher corona loss"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 43,
+    "section": "Core Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "question": "A 3-phase line delivers 10 MW at 0.8 lagging pf and 11 kV line voltage. Line current (A, 2 decimals) = ______.",
+    "answer": 656.08,
+    "tolerance": 3
+  },
+  {
+    "id": 44,
+    "section": "Core Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "The per-unit impedance of a transformer stays the same when referred from primary to secondary because:",
+    "options": [
+      "Base values also transform in the same ratio",
+      "Impedance is independent of turns ratio",
+      "Per-unit values are always 1",
+      "None of the above"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 45,
+    "section": "Core Electrical Engineering",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "The Ferranti effect is most prominent in:",
+    "options": [
+      "Short lines under full load",
+      "Long lines under light/no load",
+      "Underground cables at full load",
+      "Distribution transformers"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 46,
+    "section": "Core Electrical Engineering",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "A generator bus with fixed voltage magnitude and specified real power injection is classified as a:",
+    "options": [
+      "PV bus",
+      "PQ bus",
+      "Slack bus",
+      "None of these"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 47,
+    "section": "Core Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "For a single line-to-ground fault, sequence-network analysis requires connecting:",
+    "options": [
+      "Positive sequence network only",
+      "Positive and negative networks in parallel",
+      "Positive, negative, and zero sequence networks in series",
+      "Zero sequence network only"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 48,
+    "section": "Core Electrical Engineering",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "A moving-iron instrument can measure:",
+    "options": [
+      "DC only",
+      "AC only",
+      "Both AC and DC",
+      "Neither"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 49,
+    "section": "Core Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "question": "A Wheatstone bridge: P = 100 Ω, Q = 1000 Ω, R = 250 Ω at balance. Unknown resistance S (Ω) = ______. [Balance condition: P/Q = R/S]",
+    "answer": 2500,
+    "tolerance": 10
+  },
+  {
+    "id": 50,
+    "section": "Core Electrical Engineering",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "The error due to the loading effect of a voltmeter is minimized by using a voltmeter with:",
+    "options": [
+      "Low internal resistance",
+      "High internal resistance",
+      "Zero resistance",
+      "An ammeter instead"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 51,
+    "section": "Core Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "On a CRO, a sinusoidal signal shows peak-to-peak vertical deflection of 4 divisions at 2 V/div sensitivity. The RMS value (V) is approximately:",
+    "options": [
+      "2.83",
+      "4.0",
+      "5.66",
+      "8.0"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 52,
+    "section": "Core Electrical Engineering",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "An ideal op-amp inverting amplifier has Rf = 10 kΩ and Rin = 2 kΩ. Its gain is:",
+    "options": [
+      "+5",
+      "−5",
+      "+0.2",
+      "−0.2"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 53,
+    "section": "Core Electrical Engineering",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "An SR flip-flop (active high) with S = 1 and R = 1 produces:",
+    "options": [
+      "Set state",
+      "Reset state",
+      "No change",
+      "An invalid/undefined state"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": 54,
+    "section": "Core Electrical Engineering",
+    "type": "NAT",
+    "marks": 1,
+    "question": "For a 4-bit binary counter, the maximum count value (decimal) before it resets to zero is ______.",
+    "answer": 15,
+    "tolerance": 0
+  },
+  {
+    "id": 55,
+    "section": "Core Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "In a common-emitter BJT amplifier, the phase difference between input and output voltage is:",
+    "options": [
+      "0°",
+      "90°",
+      "180°",
+      "270°"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 56,
+    "section": "Core Electrical Engineering",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "A Zener diode is normally operated in:",
+    "options": [
+      "Forward bias, active region",
+      "Reverse bias, breakdown region",
+      "Zero bias",
+      "Forward bias, cutoff region"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 57,
+    "section": "Core Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "question": "The decimal equivalent of the binary number 10110101 is ______.",
+    "answer": 181,
+    "tolerance": 0
+  },
+  {
+    "id": 58,
+    "section": "Core Electrical Engineering",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "A thyristor (SCR) can be turned OFF by:",
+    "options": [
+      "Applying a negative gate pulse",
+      "Reducing anode current below the holding current",
+      "Increasing anode voltage",
+      "Increasing gate current"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 59,
+    "section": "Core Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "For a single-phase full-wave controlled rectifier with firing angle α, the average output voltage is proportional to:",
+    "options": [
+      "cos α",
+      "sin α",
+      "1 − cos α",
+      "tan α"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 60,
+    "section": "Core Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "question": "A buck converter has input voltage 24 V and duty cycle 0.4 (ideal, continuous conduction). Output voltage (V) = ______.",
+    "answer": 9.6,
+    "tolerance": 0.1
+  },
+  {
+    "id": 61,
+    "section": "Core Electrical Engineering",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "The commutation technique that uses a portion of the load current to turn off the SCR is called:",
+    "options": [
+      "Natural commutation",
+      "Class A (load) commutation",
+      "Complementary commutation",
+      "External pulse commutation"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 62,
+    "section": "Core Electrical Engineering",
+    "type": "MSQ",
+    "marks": 2,
+    "question": "Which of the following are TRUE regarding IGBTs?",
+    "options": [
+      "They combine the high input impedance of MOSFETs with low conduction loss similar to BJTs",
+      "They are voltage-controlled devices",
+      "They have a negative temperature coefficient of on-state resistance in all operating regions",
+      "They are widely used in medium-to-high power inverter applications"
+    ],
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ]
+  },
+  {
+    "id": 63,
+    "section": "Core Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "question": "A balanced 3-phase star-connected load has each phase impedance 10∠30° Ω, on a 400 V (line) supply. Phase current magnitude (A, 2 decimals) = ______.",
+    "answer": 23.09,
+    "tolerance": 0.2
+  },
+  {
+    "id": 64,
+    "section": "Core Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "A step-down chopper feeding a DC motor load is used primarily to control:",
+    "options": [
+      "Motor field flux only",
+      "Motor terminal voltage / speed",
+      "Motor frequency",
+      "Motor power factor"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 65,
+    "section": "Core Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "question": "In a load flow study: total generation 500 MW, total load 480 MW, transmission losses 15 MW. The mismatch (MW) to be balanced by the slack bus = ______.",
+    "answer": 5,
+    "tolerance": 0.1
+  }
+]

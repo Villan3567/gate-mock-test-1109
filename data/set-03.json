@@ -1,0 +1,920 @@
+[
+  {
+    "id": 1,
+    "section": "Engineering Mathematics",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "Let A be a 2×2 real matrix with eigenvalues 2 and 3. The determinant of (A−2I) is necessarily",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "6"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 2,
+    "section": "Engineering Mathematics",
+    "type": "NAT",
+    "marks": 2,
+    "negative": 0,
+    "question": "The value of the integral ∫₀¹ x e^(x²) dx is approximately",
+    "answer": 0.859,
+    "tolerance": 0.002
+  },
+  {
+    "id": 3,
+    "section": "Engineering Mathematics",
+    "type": "MSQ",
+    "marks": 2,
+    "negative": 0,
+    "question": "Which of the following statements about a real symmetric matrix are always true?",
+    "options": [
+      "All eigenvalues are real",
+      "It is always invertible",
+      "Eigenvectors corresponding to distinct eigenvalues are orthogonal",
+      "It is always positive definite"
+    ],
+    "answer": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": 4,
+    "section": "Engineering Mathematics",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "The solution of dy/dx + 2y = 4 with y(0)=1 is",
+    "options": [
+      "y=2−e^(−2x)",
+      "y=2+e^(−2x)",
+      "y=e^(−2x)",
+      "y=1+2e^(−2x)"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 5,
+    "section": "Engineering Mathematics",
+    "type": "NAT",
+    "marks": 2,
+    "negative": 0,
+    "question": "For a zero-mean random variable X with variance 4, the standard deviation of Y=3X−5 is",
+    "answer": 6,
+    "tolerance": 0.001
+  },
+  {
+    "id": 6,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "A passive linear network has driving-point impedance Z(s). For a physically realizable passive network, which property must hold on the jω axis wherever Z is finite?",
+    "options": [
+      "Re{Z(jω)}≥0",
+      "Im{Z(jω)}≥0 always",
+      "|Z(jω)|≤1 always",
+      "Z(jω) must be purely real"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 7,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "negative": 0,
+    "question": "A 10 V ideal source feeds a 2 Ω resistor in series with a 3 Ω resistor. The power dissipated in the 3 Ω resistor, in watts, is",
+    "answer": 12,
+    "tolerance": 0.01
+  },
+  {
+    "id": 8,
+    "section": "Electrical Engineering",
+    "type": "MSQ",
+    "marks": 2,
+    "negative": 0,
+    "question": "For a balanced three-phase positive-sequence system, which statements are correct?",
+    "options": [
+      "The three phase voltages have equal magnitudes",
+      "Each phase differs from the next by 120°",
+      "Line voltage leads its corresponding phase voltage by 30° for positive sequence",
+      "The sum of the three phase voltages is nonzero"
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": 9,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "A series RLC circuit has R=10 Ω, L=0.1 H and C=100 μF. Its resonant angular frequency is closest to",
+    "options": [
+      "100 rad/s",
+      "316 rad/s",
+      "1000 rad/s",
+      "31.6 rad/s"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 10,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "negative": 0,
+    "question": "A two-port network has ABCD parameters A=2, B=4 Ω, C=0.5 S and D=1. For a 4 Ω load connected at port 2, the voltage ratio V1/V2 in magnitude is",
+    "answer": 3,
+    "tolerance": 0.001
+  },
+  {
+    "id": 11,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "At the interface between two dielectrics with no free surface charge, which quantity is continuous?",
+    "options": [
+      "Normal component of electric flux density D",
+      "Tangential component of electric field E",
+      "Normal component of electric field E",
+      "Tangential component of electric flux density D"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 12,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "negative": 0,
+    "question": "An infinite straight conductor carries 10 A current. The magnetic field magnitude at a distance of 0.1 m from it, in μT, is",
+    "answer": 20,
+    "tolerance": 0.01
+  },
+  {
+    "id": 13,
+    "section": "Electrical Engineering",
+    "type": "MSQ",
+    "marks": 2,
+    "negative": 0,
+    "question": "For a uniform plane electromagnetic wave propagating in a lossless dielectric, which statements are correct?",
+    "options": [
+      "E, H and propagation direction are mutually perpendicular",
+      "E/H equals the intrinsic impedance of the medium",
+      "E and H are in phase",
+      "The wave impedance depends on frequency in an ideal nondispersive dielectric"
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": 14,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "The capacitance per unit length of a coaxial cable with inner radius a and outer radius b, filled with permittivity ε, is",
+    "options": [
+      "2πε/ln(b/a)",
+      "2πε ln(b/a)",
+      "πε/ln(b/a)",
+      "ε(b−a)"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 15,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 1,
+    "negative": 0,
+    "question": "The electric potential at a point 1 m away from a 1 μC isolated point charge in free space is approximately, in volts",
+    "answer": 9000,
+    "tolerance": 1
+  },
+  {
+    "id": 16,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "The Fourier transform of δ(t−t₀) is",
+    "options": [
+      "1",
+      "e^(−jωt₀)",
+      "e^(jωt₀)",
+      "δ(ω−t₀)"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 17,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "negative": 0,
+    "question": "A continuous-time LTI system has impulse response h(t)=e^(−2t)u(t). Its DC gain is",
+    "answer": 0.5,
+    "tolerance": 0.001
+  },
+  {
+    "id": 18,
+    "section": "Electrical Engineering",
+    "type": "MSQ",
+    "marks": 2,
+    "negative": 0,
+    "question": "Which of the following signals are periodic?",
+    "options": [
+      "sin(4t)",
+      "cos(πt)",
+      "e^(j√2 t)",
+      "sin(2t)+cos(3t)"
+    ],
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ]
+  },
+  {
+    "id": 19,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "For a causal continuous-time LTI system, which condition on its transfer function poles is necessary for BIBO stability if the system is rational?",
+    "options": [
+      "All poles must lie strictly in the left half-plane",
+      "All zeros must lie in the left half-plane",
+      "At least one pole must lie in the right half-plane",
+      "Poles may lie on the jω axis without restriction"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 20,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "negative": 0,
+    "question": "A signal is sampled at 8 kHz. The highest sinusoidal frequency that can be sampled without aliasing, expressed in kHz, is",
+    "answer": 4,
+    "tolerance": 0.001
+  },
+  {
+    "id": 21,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "In a DC generator, the commutator primarily acts as a",
+    "options": [
+      "mechanical rectifier",
+      "voltage regulator",
+      "speed controller",
+      "power factor corrector"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 22,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "negative": 0,
+    "question": "A 4-pole, 50 Hz induction motor runs at 1440 rpm. Its slip in percent is",
+    "answer": 4,
+    "tolerance": 0.01
+  },
+  {
+    "id": 23,
+    "section": "Electrical Engineering",
+    "type": "MSQ",
+    "marks": 2,
+    "negative": 0,
+    "question": "For a transformer operating at constant frequency, which statements are correct?",
+    "options": [
+      "Core flux is approximately proportional to V/f",
+      "Copper loss depends on load current",
+      "Core loss is ideally independent of load current",
+      "Increasing frequency at constant voltage increases core flux"
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": 24,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "A 3-phase, 50 Hz, 6-pole induction motor operates at 4% slip. Its rotor current frequency is",
+    "options": [
+      "1 Hz",
+      "2 Hz",
+      "3 Hz",
+      "4 Hz"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 25,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "negative": 0,
+    "question": "A 50 Hz, 4-pole synchronous generator supplies a grid. Its synchronous speed in rpm is",
+    "answer": 1500,
+    "tolerance": 0.1
+  },
+  {
+    "id": 26,
+    "section": "Electrical Engineering",
+    "type": "MSQ",
+    "marks": 2,
+    "negative": 0,
+    "question": "For a synchronous generator connected to an infinite bus, which actions can increase its real power output without changing the bus voltage magnitude directly?",
+    "options": [
+      "Increase mechanical input torque",
+      "Change excitation while keeping mechanical input constant",
+      "Increase prime-mover input power",
+      "Reduce field current while keeping mechanical input unchanged"
+    ],
+    "answer": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": 27,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "The speed of a separately excited DC motor is approximately proportional to",
+    "options": [
+      "Armature voltage divided by field flux",
+      "Field flux divided by armature voltage",
+      "Armature resistance only",
+      "Load torque only"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 28,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "negative": 0,
+    "question": "A 3-phase induction motor develops maximum torque at slip 0.2. If rotor resistance is doubled while leakage reactance remains unchanged, the new slip at maximum torque is",
+    "answer": 0.4,
+    "tolerance": 0.001
+  },
+  {
+    "id": 29,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "The per-unit value of impedance of a transformer is unchanged when referred from one side to the other if",
+    "options": [
+      "the same MVA base and corresponding voltage bases are used",
+      "the same voltage base is used on both sides regardless of turns ratio",
+      "current base is kept constant",
+      "frequency base is changed"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 30,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "negative": 0,
+    "question": "A 100 MVA, 11 kV generator has synchronous reactance of 0.2 pu. Its reactance in ohms on the 11 kV side is",
+    "answer": 0.242,
+    "tolerance": 0.002
+  },
+  {
+    "id": 31,
+    "section": "Electrical Engineering",
+    "type": "MSQ",
+    "marks": 2,
+    "negative": 0,
+    "question": "Which devices can be used for reactive power compensation in an AC transmission system?",
+    "options": [
+      "Shunt capacitor bank",
+      "Synchronous condenser",
+      "STATCOM",
+      "Series resistor bank"
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": 32,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "For a short transmission line, the shunt capacitance is usually",
+    "options": [
+      "neglected",
+      "made equal to series inductance",
+      "the dominant parameter",
+      "represented as a transformer"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 33,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "negative": 0,
+    "question": "A lossless line has characteristic impedance 400 Ω and is terminated by 800 Ω. The magnitude of the voltage reflection coefficient at the load is",
+    "answer": 0.3333,
+    "tolerance": 0.001
+  },
+  {
+    "id": 34,
+    "section": "Electrical Engineering",
+    "type": "MSQ",
+    "marks": 2,
+    "negative": 0,
+    "question": "Which statements about symmetrical components are correct?",
+    "options": [
+      "A balanced positive-sequence set represents normal balanced operation",
+      "Zero-sequence currents are in phase in all three phases",
+      "Negative-sequence currents can cause double-frequency rotor currents in synchronous machines",
+      "A three-phase balanced positive-sequence system has zero negative-sequence component"
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ]
+  },
+  {
+    "id": 35,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "The primary purpose of a distance relay is to protect",
+    "options": [
+      "transmission lines",
+      "transformer oil",
+      "generator bearings",
+      "busbar insulation only"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 36,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "negative": 0,
+    "question": "Two generating units have incremental costs dC1/dP1=20+0.02P1 and dC2/dP2=24+0.04P2. Neglecting losses, if the total load is 400 MW, the economic dispatch P1 in MW is",
+    "answer": 266.67,
+    "tolerance": 0.05
+  },
+  {
+    "id": 37,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "For a unity-feedback system with forward transfer function G(s)=K/[s(s+2)], increasing K generally causes the steady-state error for a step input to",
+    "options": [
+      "remain zero",
+      "increase",
+      "become infinite",
+      "depend only on the sensor gain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 38,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "negative": 0,
+    "question": "For the characteristic equation s²+4s+25=0, the damping ratio is",
+    "answer": 0.4,
+    "tolerance": 0.001
+  },
+  {
+    "id": 39,
+    "section": "Electrical Engineering",
+    "type": "MSQ",
+    "marks": 2,
+    "negative": 0,
+    "question": "Which statements about a stable continuous-time LTI system are correct?",
+    "options": [
+      "All poles of a rational transfer function lie in the open left half-plane",
+      "Its impulse response is absolutely integrable",
+      "Its step response must be oscillatory",
+      "Its natural response decays with time"
+    ],
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ]
+  },
+  {
+    "id": 40,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "The root locus of a standard negative-feedback system starts at the",
+    "options": [
+      "open-loop poles as K→0",
+      "open-loop zeros as K→0",
+      "closed-loop poles at infinity only",
+      "origin irrespective of G(s)"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 41,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "negative": 0,
+    "question": "For a unity-feedback type-1 system with G(s)=10/s, the steady-state error for a unit-ramp input is",
+    "answer": 0.1,
+    "tolerance": 0.001
+  },
+  {
+    "id": 42,
+    "section": "Electrical Engineering",
+    "type": "MSQ",
+    "marks": 1,
+    "negative": 0,
+    "question": "Which are time-domain specifications of a standard second-order step response?",
+    "options": [
+      "Rise time",
+      "Peak time",
+      "Settling time",
+      "Gain crossover frequency"
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": 43,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "A PMMC instrument is primarily used for measuring",
+    "options": [
+      "DC quantities",
+      "AC quantities directly without rectification",
+      "high-frequency RF power only",
+      "frequency only"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 44,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "negative": 0,
+    "question": "A voltmeter has a sensitivity of 20 kΩ/V. On the 10 V range, its input resistance in kΩ is",
+    "answer": 200,
+    "tolerance": 0.01
+  },
+  {
+    "id": 45,
+    "section": "Electrical Engineering",
+    "type": "MSQ",
+    "marks": 2,
+    "negative": 0,
+    "question": "Which statements about a current transformer (CT) are correct?",
+    "options": [
+      "Its secondary should not be open-circuited while the primary is energized",
+      "It is normally used to step down current for measurement",
+      "Its secondary is connected to a low impedance burden",
+      "It can be safely operated with its secondary open under all conditions"
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": 46,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "In a Wheatstone bridge, the detector current is zero when",
+    "options": [
+      "the ratio of the two arms on one side equals the ratio on the other side",
+      "all four resistances are zero",
+      "the source voltage is maximum",
+      "the detector resistance is zero"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 47,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 1,
+    "negative": 0,
+    "question": "An analog voltmeter has a full-scale value of 100 V and an accuracy specification of ±1% of full scale. The maximum absolute error in volts is",
+    "answer": 1,
+    "tolerance": 0.001
+  },
+  {
+    "id": 48,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "For an ideal operational amplifier operating in the linear region with negative feedback, the voltage difference between its input terminals is approximately",
+    "options": [
+      "zero",
+      "equal to supply voltage",
+      "infinite",
+      "equal to output voltage"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 49,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "negative": 0,
+    "question": "An ideal inverting op-amp has Rin=10 kΩ and Rf=100 kΩ. For an input of 0.2 V, the output voltage magnitude is",
+    "answer": 2,
+    "tolerance": 0.001
+  },
+  {
+    "id": 50,
+    "section": "Electrical Engineering",
+    "type": "MSQ",
+    "marks": 2,
+    "negative": 0,
+    "question": "Which statements about a silicon diode are correct under the usual piecewise-linear model?",
+    "options": [
+      "It conducts significantly when forward biased beyond its threshold",
+      "It blocks current when reverse biased below breakdown",
+      "Its forward threshold is commonly approximated near 0.7 V",
+      "It behaves as an ideal short circuit for every forward voltage"
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": 51,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "A common-emitter BJT amplifier generally provides",
+    "options": [
+      "voltage gain with phase inversion",
+      "zero voltage gain",
+      "only current gain and no voltage gain",
+      "unity power gain always"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 52,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 1,
+    "negative": 0,
+    "question": "An ideal 5.1 V Zener diode is used as a voltage regulator in its breakdown region. The regulated output voltage, in volts, is",
+    "answer": 5.1,
+    "tolerance": 0.001
+  },
+  {
+    "id": 53,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "The decimal number 13 represented in 4-bit binary is",
+    "options": [
+      "1010",
+      "1011",
+      "1101",
+      "1110"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 54,
+    "section": "Electrical Engineering",
+    "type": "MSQ",
+    "marks": 2,
+    "negative": 0,
+    "question": "Which of the following are universal logic gates?",
+    "options": [
+      "NAND",
+      "NOR",
+      "XOR",
+      "XNOR"
+    ],
+    "answer": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": 55,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "negative": 0,
+    "question": "A 4-bit binary counter is initially at 0000. After 37 input clock pulses, its state in decimal is",
+    "answer": 5,
+    "tolerance": 0.001
+  },
+  {
+    "id": 56,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "For a JK flip-flop, when J=K=1, the next state is",
+    "options": [
+      "same as present state",
+      "complement of present state",
+      "always 0",
+      "always 1"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": 57,
+    "section": "Electrical Engineering",
+    "type": "MSQ",
+    "marks": 1,
+    "negative": 0,
+    "question": "Which are combinational circuits?",
+    "options": [
+      "Multiplexer",
+      "Decoder",
+      "Full adder",
+      "Counter"
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": 58,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 1,
+    "negative": 0.33,
+    "question": "An ideal SCR can be turned OFF by",
+    "options": [
+      "reducing its anode current below the holding current",
+      "applying a positive gate pulse",
+      "increasing gate current indefinitely",
+      "shorting gate to anode"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": 59,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "negative": 0,
+    "question": "A single-phase fully controlled bridge converter is supplied by 230 V rms AC. For continuous current and firing angle α=60°, the average output voltage in volts is approximately",
+    "answer": 103.5,
+    "tolerance": 0.5
+  },
+  {
+    "id": 60,
+    "section": "Electrical Engineering",
+    "type": "MSQ",
+    "marks": 2,
+    "negative": 0,
+    "question": "Which devices are commonly used as self-commutated power semiconductor switches?",
+    "options": [
+      "MOSFET",
+      "IGBT",
+      "GTO",
+      "Ordinary uncontrolled diode"
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": 61,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "In an ideal boost converter operating in continuous conduction mode, if duty ratio D=0.6, the output-to-input voltage ratio is",
+    "options": [
+      "0.4",
+      "1.5",
+      "2.5",
+      "3.0"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": 62,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "negative": 0,
+    "question": "An ideal buck converter operates from a 100 V DC source with duty ratio 0.35. The average output voltage in volts is",
+    "answer": 35,
+    "tolerance": 0.01
+  },
+  {
+    "id": 63,
+    "section": "Electrical Engineering",
+    "type": "MSQ",
+    "marks": 2,
+    "negative": 0,
+    "question": "A balanced three-phase load is connected in star. Which statements are correct for a balanced system?",
+    "options": [
+      "The neutral current is zero",
+      "Line current equals phase current",
+      "Line voltage magnitude is √3 times phase voltage magnitude",
+      "The three phase currents sum to zero instantaneously"
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ]
+  },
+  {
+    "id": 64,
+    "section": "Electrical Engineering",
+    "type": "NAT",
+    "marks": 2,
+    "negative": 0,
+    "question": "A 10 kW three-phase load operates at 0.8 lagging power factor from a 400 V line-to-line supply. The line current in amperes is approximately",
+    "answer": 18.04,
+    "tolerance": 0.05
+  },
+  {
+    "id": 65,
+    "section": "Electrical Engineering",
+    "type": "MCQ",
+    "marks": 2,
+    "negative": 0.67,
+    "question": "A power system has a short-circuit level of 500 MVA at a bus. If a 100 MVA base is selected at the same voltage, the per-unit short-circuit impedance seen from the bus is",
+    "options": [
+      "0.02 pu",
+      "0.2 pu",
+      "5 pu",
+      "50 pu"
+    ],
+    "answer": "B"
+  }
+]
