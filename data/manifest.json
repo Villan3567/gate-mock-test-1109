@@ -1,0 +1,31 @@
+[
+  {
+    "id": "set-01",
+    "title": "GATE EE Full Mock 1",
+    "description": "Full-length paper — General Aptitude, Engineering Maths, Core EE.",
+    "questions": 65,
+    "duration": 180
+  },
+  {
+    "id": "set-02",
+    "title": "GATE EE Full Mock 2",
+    "description": "Full-length paper — General Aptitude, Engineering Maths, Core EE.",
+    "questions": 65,
+    "duration": 180
+  },
+  {
+    "id": "set-03",
+    "title": "GATE EE Full Mock 3",
+    "description": "Full-length paper —Only Core EE.",
+    "questions": 65,
+    "duration": 180
+  },
+  {
+    "id": "set-04",
+    "title": "GATE EE Full Mock 4",
+    "description": "Full-length paper — General Aptitude, Engineering Maths, Core EE.",
+    "questions": 65,
+    "duration": 180
+  }
+
+]
